@@ -22,8 +22,6 @@ require("lazy").setup({
 
     { import = "plugins" },
 
-    { import = "lazyvim.configs" },
-
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 
     {
