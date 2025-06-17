@@ -21,7 +21,10 @@ return {
   -- Refactoring tool
   {
     "ThePrimeagen/refactoring.nvim",
-
+    -- dependencies = {
+    --   "nvim-lua/plenary.nvim",
+    --   "nvim-treesitter/nvim-treesitter",
+    -- },
     keys = {
       {
         "<leader>rf",
@@ -33,9 +36,9 @@ return {
         mode = { "n", "v" },
         noremap = true,
         silent = true,
-        expr = true,
+        expr = false,
       },
     },
+    opts = { telescope = { enabled = true } },
   },
-  opts = {},
 }
