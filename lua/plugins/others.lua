@@ -87,6 +87,7 @@ return {
         "typescript-language-server",
         "tailwindcss-language-server",
         "css-lsp",
+        "rust_analyzer",
       },
     },
   },
