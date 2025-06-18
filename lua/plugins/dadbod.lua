@@ -15,7 +15,7 @@ return {
   },
   keys = {
     {
-      "<leader>db",
+      "<leader>DB",
       -- function()
       --   require("dbui").toggle()
       -- end,
