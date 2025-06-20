@@ -84,10 +84,17 @@ return {
         "shfmt",
         "flake8",
 
+        -- CUSTOM LANGUAGE SERVERS
+        -- web development fullstack
         "typescript-language-server",
         "tailwindcss-language-server",
         "css-lsp",
+
+        -- rust
         "rust_analyzer",
+
+        -- solidity
+        "solidity_ls",
       },
     },
   },
