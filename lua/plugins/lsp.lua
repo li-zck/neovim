@@ -110,6 +110,47 @@ return {
           },
           -- pyright will be automatically installed with mason and loaded with lspconfig
           pyright = {},
+
+          efm = {
+            filetypes = {
+              "solidity",
+              "javascript",
+              "typescript",
+              "json",
+              "lua",
+            },
+            root_dir = function(fname)
+              return require("lspconfig.util").root_pattern(
+                "package.json",
+                "tsconfig.json",
+                "hardhat.config.js",
+                ".git",
+                "truffle-config.js",
+                "foundry.toml"
+              )(fname)
+            end,
+            settings = {
+              ["solidity"] = {
+                format_on_save = {
+                  prettier = {
+                    command = "prettier",
+                    args = { "--stdin-filepath", "%filepath%", "--parser", "solidity-parse" },
+                    stdin = true,
+                  },
+                },
+
+                linters = {
+                  solhint = {
+                    command = "solhint",
+                    args = { "%filepath%" },
+                    root_dir = require("lspconfig.util").root_pattern("package.json", ".git", "solhintrc.json"),
+                    lint_stdin = true,
+                    lint_args = { "--stdin", "%filepath%" },
+                  },
+                },
+              },
+            },
+          },
         },
         -- solidity_ls = {
         --   capabilities = require("lspconfig").util.default_config.capabilities,
