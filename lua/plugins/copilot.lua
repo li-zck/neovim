@@ -1,6 +1,9 @@
 return {
   "zbirenbaum/copilot.lua",
   opts = {
+    panel = {
+      enabled = false,
+    },
     suggestion = {
       enabled = true,
       auto_trigger = true,
