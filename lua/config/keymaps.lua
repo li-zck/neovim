@@ -4,14 +4,18 @@
 
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
-
 -- Go to next diagnostic
 keymap("n", "<C-j>", function()
   vim.diagnostic.goto_next()
 end, opts)
 
--- DAP keymaps
+-- Go to previous diagnostic
+keymap("n", "<C-k>", function()
+  vim.diagnostic.goto_prev()
+end)
+
 return {
+  -- DAP keymaps
   -- Debugger Commands (mostly align with LazyVim defaults)
   keymap("n", "<leader>di", "<cmd>lua require('dap').step_into()<CR>", { desc = "Debugger step into" }),
   keymap("n", "<leader>dj", "<cmd>lua require('dap').step_over()<CR>", { desc = "Debugger step over" }),
@@ -31,8 +35,43 @@ return {
   keymap("n", "<leader>dr", "<cmd>lua require('dap').run_last()<CR>", { desc = "Debugger run last" }),
 
   -- rustaceanvim specific command:
-  -- !!! RESOLVED CONFLICT: changed from <leader>dt to <leader>dT !!!
   keymap("n", "<leader>dT", "<cmd>lua vim.cmd('RustLsp testables')<CR>", { desc = "RustLsp testables" }),
   -- If you prefer <leader>rt, use:
   -- keymap("n", "<leader>rt", "<cmd>lua vim.cmd('RustLsp testables')<CR>", { desc = "RustLsp testables" }),
+
+  -- package-info keymaps
+  keymap(
+    "n",
+    "<leader>cpt",
+    "<cmd>lua require('package-info').toggle()<CR>",
+    { silent = true, noremap = true, desc = "Toggle package-info" }
+  ),
+
+  keymap(
+    "n",
+    "<leader>cpd",
+    "<cmd>lua require('package-info').delete()<CR>",
+    { silent = true, noremap = true, desc = "Delete package" }
+  ),
+
+  keymap(
+    "n",
+    "<leader>cpi",
+    "<cmd>lua require('package-info').install()<CR>",
+    { silent = true, noremap = true, desc = "Install package" }
+  ),
+
+  keymap(
+    "n",
+    "<leader>cpu",
+    "<cmd>lua require('package-info').update()<CR>",
+    { silent = true, noremap = true, desc = "Update package" }
+  ),
+
+  keymap(
+    "n",
+    "<leader>cpc",
+    "<cmd>lua require('package-info').change_version()<CR>",
+    { silent = true, noremap = true, desc = "Change package version" }
+  ),
 }
