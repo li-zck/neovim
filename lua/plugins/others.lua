@@ -83,6 +83,7 @@ return {
         "shellcheck",
         "shfmt",
         "flake8",
+        "gopls",
 
         -- CUSTOM LANGUAGE SERVERS
         -- web development fullstack
