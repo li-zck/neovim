@@ -21,3 +21,30 @@
 --     vim.lsp.buf.format({ name = "efm", async = true })
 --   end,
 -- })
+
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+--   pattern = "*",
+--   callback = function(args)
+--     require("conform").format({ bufnr = args.buf })
+--   end,
+-- })
+
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+--   pattern = { "*.js", "*.ts", "*.jsx", "*.tsx", "*.json", "*.css", "*.scss", "*.html" },
+--   callback = function()
+--     vim.lsp.buf.format({ async = false })
+--   end,
+-- })
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = { "*.mdx" },
+  callback = function()
+    vim.bo.filetype = "mdx"
+  end,
+})
+
+vim.filetype.add({
+  extension = {
+    mdx = "mdx",
+  },
+})
