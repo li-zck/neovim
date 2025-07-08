@@ -59,8 +59,6 @@ return {
       -- print(vim.inspect(state.floating))
     end
 
-    local close_floating_window = function() end
-
     vim.api.nvim_create_user_command("FloatTerminal", toggle_terminal, {})
     vim.keymap.set({ "n", "t" }, "<leader>tt", toggle_terminal, { desc = "Toggle Floating Terminal" })
   end,
