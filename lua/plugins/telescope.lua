@@ -3,20 +3,22 @@ return {
   keys = {
     {
       "<leader><leader>",
+
       function()
         require("telescope.builtin").find_files({
           hidden = true,
           no_ignore = true,
+          -- no_ignore_parent = true,
           file_ignore_patterns = {
             "node_modules/",
             "^%.git/",
             "%.cache/",
-            "%.vscode/",
             "%.idea/",
             "target/",
             "build/",
             "dist/",
             "venv/",
+            ".next/",
           },
         })
       end,

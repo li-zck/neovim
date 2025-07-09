@@ -1,27 +1,27 @@
 return {
-  "NStefan002/screenkey.nvim",
-  lazy = false,
-  version = "*",
-
-  config = function(_, opts)
-    require("screenkey").setup(opts)
-    vim.api.nvim_create_autocmd("VimEnter", {
-      group = vim.api.nvim_create_augroup("AutostartScreenkey", {}),
-      command = "Screenkey toggle",
-      desc = "Autostart Screenkey on VimEnter",
-    })
-  end,
-
-  opts = {
-    win_opts = {
-      border = "rounded",
-      title = "UwU",
-    },
-
-    -- hl_groups = {
-    --   ["screenkey.hl.key"] = { link = "Normal" },
-    --   ["screenkey.hl.map"] = { link = "Normal" },
-    --   ["screenkey.hl.sep"] = { link = "Normal" },
-    -- },
-  },
+  -- "NStefan002/screenkey.nvim",
+  -- lazy = false,
+  -- version = "*",
+  --
+  -- config = function(_, opts)
+  --   require("screenkey").setup(opts)
+  --   vim.api.nvim_create_autocmd("VimEnter", {
+  --     group = vim.api.nvim_create_augroup("AutostartScreenkey", {}),
+  --     command = "Screenkey toggle",
+  --     desc = "Autostart Screenkey on VimEnter",
+  --   })
+  -- end,
+  --
+  -- opts = {
+  --   win_opts = {
+  --     border = "rounded",
+  --     title = "UwU",
+  --   },
+  --
+  --   -- hl_groups = {
+  --   --   ["screenkey.hl.key"] = { link = "Normal" },
+  --   --   ["screenkey.hl.map"] = { link = "Normal" },
+  --   --   ["screenkey.hl.sep"] = { link = "Normal" },
+  --   -- },
+  -- },
 }
