@@ -43,9 +43,18 @@ return {
       return value
     end
 
+    -- Add blank lines between each header line
+    local spaced_header = {}
+    for _, line in ipairs(dashboard.section.header.val) do
+      table.insert(spaced_header, line)
+      table.insert(spaced_header, "")
+    end
+    dashboard.section.header.val = spaced_header
+
+    -- Recalculate header dimensions after spacing
     local header_lines = dashboard.section.header.val
     local header_height = #header_lines
-    local win_height = vim.api.nvim_get_option_value("lines", { scope = "global" })
+    local win_height = vim.api.nvim_get_option_value("lines", { scope = "global" }) -- modern & correct
     local footer_height = 4
     local buttons_height = #dashboard.section.buttons.val + 2
 
@@ -53,10 +62,17 @@ return {
     local used_height = header_height + footer_height + buttons_height
     local top_padding = math.max(0, math.floor((win_height - used_height) / 2.5))
 
-    -- Insert empty lines to push header downward
+    -- Insert padding to vertically center the header
     for _ = 1, top_padding do
       table.insert(header_lines, 1, "")
     end
+
+    vim.api.nvim_set_hl(0, "HeaderStyle", {
+      fg = "#FFD700",
+      bold = true,
+      italic = true,
+    })
+    dashboard.section.header.opts.hl = "HeaderStyle"
 
     -- -- Append the footer string below the ASCII art
     -- local count = 0
