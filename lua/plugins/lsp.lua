@@ -153,16 +153,16 @@ return {
           },
         },
         emmet_ls = {
-          filetypes = { "html", "css", "javascript", "typescript", "javascriptreact", "typescriptreact" },
-          init_options = {
-            html = {
-              options = {
-                ["bem.enabled"] = true,
-                ["jsx.enabled"] = true,
-                ["xml.enabled"] = true,
-              },
-            },
-          },
+          -- filetypes = { "html", "css", "javascript", "typescript", "javascriptreact", "typescriptreact" },
+          -- init_options = {
+          --   html = {
+          --     options = {
+          --       ["bem.enabled"] = true,
+          --       ["jsx.enabled"] = true,
+          --       ["xml.enabled"] = true,
+          --     },
+          --   },
+          -- },
         },
         -- solidity_ls = {
         --   capabilities = require("lspconfig").util.default_config.capabilities,
