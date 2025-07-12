@@ -5,7 +5,6 @@ local poem = {
     "Yên ba thâm xứ đàm quân sự,",
     "Dạ bán quy lai nguyệt mãn thuyền.",
   },
-
   {
     "Ngục trung vô tửu diệc vô hoa,",
     "Đối thử lương tiêu nại nhược hà?",
@@ -23,6 +22,12 @@ local poem = {
     "Chẳng hay chiếu ấy hết hay còn?",
     "Xuân thu phỏng độ chừng bao tuổi,",
     "Đã có chồng chưa, được mấy con?",
+  },
+  {
+    "Tẩu lộ tài tri tẩu lộ nan",
+    "Trùng san chi ngoại hựu trùng san",
+    "Trùng san đăng đáo cao phong hậu",
+    "Vạn lý dư đồ cố miện gian.",
   },
 }
 
