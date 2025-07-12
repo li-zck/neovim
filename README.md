@@ -1,9 +1,9 @@
 # 💤 Lazy Lazy
 
-## utils for utils
+### utils for utils
 
-## config for config
+### config for config
 
-## testing for testing
+### testing for testing
 
-## utils for random crap
+### utils for random crap
