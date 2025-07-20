@@ -12,36 +12,13 @@ return {
             return require("lspconfig.util").root_pattern(".git")(...)
           end,
         },
-        tsserver = {
-          root = function(...)
-            return require("lspconfig.util").root_pattern(".git")(...)
-          end,
-          single_file_support = false,
-          settings = {
-            typescript = {
-              inlay_hints = {
-                includeInlayParameterNameHints = "literal",
-                includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-                includeInlayFunctionParameterTypeHints = true,
-                includeInlayVariableTypeHints = true,
-                includeInlayPropertyDeclarationTypeHints = true,
-                includeInlayfunctionLikeReturnTypeHints = true,
-                includeInlayEnumMemberValueHints = true,
-              },
-            },
-            javascript = {
-              inlay_hints = {
-                includeInlayParameterNameHints = "all",
-                includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-                includeInlayFunctionParameterTypeHints = true,
-                includeInlayVariableTypeHints = true,
-                includeInlayPropertyDeclarationTypeHints = true,
-                includeInlayFunctionLikeReturnTypeHints = true,
-                includeInlayEnumMemberValueHints = true,
-              },
-            },
-          },
-        },
+
+        -- tsserver = {
+        --   root = function(...)
+        --     return require("lspconfig.util").root_pattern(".git")(...)
+        --   end,
+        --   single_file_support = false,
+        -- },
 
         html = {},
         lua_ls = {
@@ -76,6 +53,7 @@ return {
                 castNumberToInteger = true,
               },
               diagnostics = {
+                ignoredCodes = { 6133, 6192 },
                 disable = { "incomplete-signature-doc", "trailing-space" },
                 -- enable = false,
                 groupSeverity = {
@@ -183,7 +161,7 @@ return {
           ---@type lspconfig.options
           servers = {
             -- tsserver will be automatically installed with mason and loaded with lspconfig
-            tsserver = {},
+            -- tsserver = {},
           },
           -- you can do any additional lsp server setup here
           -- return true if you don't want this server to be setup with lspconfig

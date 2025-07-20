@@ -10,8 +10,8 @@ return {
     local datetime = tonumber(os.date(" %H "))
     local stats = require("lazy").stats()
     local total_plugins = stats.count
-    -- local get_header = require("utils.startpage-headers")
     local get_header = require("utils.poetry")
+    -- local get_header = require("utils.startpage-headers")
     local function button(sc, txt, keybind, keybind_opts)
       local b = dashboard.button(sc, txt, keybind, keybind_opts)
       b.opts.hl_shortcut = "MiniIconsPurple"

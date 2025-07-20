@@ -10,6 +10,10 @@ vim.opt.fileencoding = "utf-8"
 
 vim.opt.number = true
 
+-- vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:block,r-cr-o:block"
+-- vim.opt.guicursor =
+--   "n-v-c:block,i-ci-ve:block,r-cr:block,o:block,a:blinkwait400-blinkoff300-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
+
 vim.opt.title = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
@@ -38,3 +42,6 @@ vim.opt.equalalways = false
 
 -- Add asterisks in block comments
 vim.opt.formatoptions:append({ "r" })
+
+vim.opt.guicursor = ""
+vim.opt["guicursor"] = ""
