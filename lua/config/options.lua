@@ -2,6 +2,13 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
+-- general nvim settings
+-- color
+vim.opt.termguicolors = true
+
+-- font
+vim.o.guifont = "FiraCode Nerd Font"
+
 vim.g.mapleader = " "
 
 vim.scriptencoding = "utf-8"
@@ -10,9 +17,7 @@ vim.opt.fileencoding = "utf-8"
 
 vim.opt.number = true
 
--- vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:block,r-cr-o:block"
--- vim.opt.guicursor =
---   "n-v-c:block,i-ci-ve:block,r-cr:block,o:block,a:blinkwait400-blinkoff300-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
+vim.o.cmdheight = 0
 
 vim.opt.title = true
 vim.opt.autoindent = true
@@ -42,6 +47,3 @@ vim.opt.equalalways = false
 
 -- Add asterisks in block comments
 vim.opt.formatoptions:append({ "r" })
-
-vim.opt.guicursor = ""
-vim.opt["guicursor"] = ""

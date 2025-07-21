@@ -36,12 +36,12 @@
 --   end,
 -- })
 
-vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-  pattern = { "*.mdx" },
-  callback = function()
-    vim.bo.filetype = "mdx"
-  end,
-})
+-- vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+--   pattern = { "*.mdx" },
+--   callback = function()
+--     vim.bo.filetype = "mdx"
+--   end,
+-- })
 
 vim.filetype.add({
   extension = {
