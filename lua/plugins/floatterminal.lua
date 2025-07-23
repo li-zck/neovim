@@ -52,6 +52,7 @@ return {
         state.floating = create_floating_window({ buf = state.floating.buf })
         if vim.bo[state.floating.buf].buftype ~= "terminal" then
           vim.cmd.terminal()
+          vim.cmd("setlocal winhighlight=Normal:NormalFloat") -- for neovide specifically
         end
       else
         vim.api.nvim_win_hide(state.floating.win)

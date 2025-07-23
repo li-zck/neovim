@@ -60,9 +60,4 @@ require("lazy").setup({
       },
     },
   },
-  vim.filetype.add({
-    extension = {
-      mdx = "mdx",
-    },
-  }),
 })

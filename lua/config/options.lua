@@ -6,9 +6,6 @@
 -- color
 vim.opt.termguicolors = true
 
--- font
-vim.o.guifont = "FiraCode Nerd Font"
-
 vim.g.mapleader = " "
 
 vim.scriptencoding = "utf-8"
@@ -17,7 +14,7 @@ vim.opt.fileencoding = "utf-8"
 
 vim.opt.number = true
 
-vim.o.cmdheight = 0
+vim.o.cmdheight = 1
 
 vim.opt.title = true
 vim.opt.autoindent = true
