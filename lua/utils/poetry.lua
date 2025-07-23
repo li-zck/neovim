@@ -67,6 +67,10 @@ local poem = {
     "Khen ai đẽo đá tài xuyên tạc,",
     "Khéo hớ hênh ra lắm kẻ dòm.",
   },
+  {
+    "Nên nính thượng thức cao thâm xứ,",
+    "Mạc quái anh hùng lưỡng thủ mô.",
+  },
 }
 
 local function get_header(index, random)
