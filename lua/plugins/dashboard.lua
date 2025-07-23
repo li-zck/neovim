@@ -6,7 +6,7 @@ return {
   config = function()
     local alpha = require("alpha")
     local dashboard = require("alpha.themes.dashboard")
-    local icons = require("utils.icons").icons
+    -- local icons = require("utils.icons").icons
     local datetime = tonumber(os.date(" %H "))
     local stats = require("lazy").stats()
     local total_plugins = stats.count
@@ -20,25 +20,25 @@ return {
 
     dashboard.section.header.val = get_header(0, true) -- (index, bool) index of ascii art bool if you want random or not eg: (30, false)
     dashboard.section.buttons.val = {
-      button("e", icons.ui.new_file .. " New file", ":ene <BAR> startinsert <CR>"),
-      button("f", icons.ui.files .. " Find Files", ":Telescope find_files <CR>"),
-      button(
-        "p",
-        icons.git.repo .. " Find project",
-        "<cmd>lua require('telescope').extensions.projects.projects()<cr>"
-      ),
-      button("o", icons.ui.restore .. " Recent Files", "<cmd>Telescope oldfiles<cr>"),
-      button("t", icons.kinds.nvchad.Text .. " Find text", ":Telescope live_grep <CR>"),
-      button("c", " " .. " Neovim config", "<cmd>e ~/.config/nvim/ | cd %:p:h<cr>"),
-      button("l", "󰒲  Lazy", "<cmd>Lazy<cr>"),
-      button("q", icons.ui.close .. " Quit NVIM", ":qa<CR>"),
+      -- button("e", icons.ui.new_file .. " New file", ":ene <BAR> startinsert <CR>"),
+      -- button("f", icons.ui.files .. " Find Files", ":Telescope find_files <CR>"),
+      -- button(
+      --   "p",
+      --   icons.git.repo .. " Find project",
+      --   "<cmd>lua require('telescope').extensions.projects.projects()<cr>"
+      -- ),
+      -- button("o", icons.ui.restore .. " Recent Files", "<cmd>Telescope oldfiles<cr>"),
+      -- button("t", icons.kinds.nvchad.Text .. " Find text", ":Telescope live_grep <CR>"),
+      -- button("c", " " .. " Neovim config", "<cmd>e ~/.config/nvim/ | cd %:p:h<cr>"),
+      -- button("l", "󰒲  Lazy", "<cmd>Lazy<cr>"),
+      -- button("q", icons.ui.close .. " Quit NVIM", ":qa<CR>"),
     }
 
     local function footer()
       local footer_datetime = os.date("  %m-%d-%Y   %H:%M:%S")
       local version = vim.version()
       local nvim_version_info = "   v" .. version.major .. "." .. version.minor .. "." .. version.patch
-      local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+      -- local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
       local value = footer_datetime .. "   Plugins " .. total_plugins .. nvim_version_info
       return value
     end
@@ -55,11 +55,11 @@ return {
     local header_lines = dashboard.section.header.val
     local header_height = #header_lines
     local win_height = vim.api.nvim_get_option_value("lines", { scope = "global" }) -- modern & correct
-    local footer_height = 4
-    local buttons_height = #dashboard.section.buttons.val + 2
+    local footer_height = 1
+    -- local buttons_height = #dashboard.section.buttons.val + 2
 
     -- Calculate vertical center padding
-    local used_height = header_height + footer_height + buttons_height
+    local used_height = header_height + footer_height
     local top_padding = math.max(0, math.floor((win_height - used_height) / 2.5))
 
     -- Insert padding to vertically center the header
@@ -68,7 +68,7 @@ return {
     end
 
     vim.api.nvim_set_hl(0, "HeaderStyle", {
-      fg = "#FFD700",
+      fg = "#74c4ec",
       bold = true,
       italic = true,
     })
@@ -87,7 +87,7 @@ return {
     -- end
     -- table.insert(dashboard.section.header.val, footer())
 
-    -- dashboard.section.footer.val = require("alpha.fortune")()
+    dashboard.section.footer.val = require("alpha.fortune")()
     dashboard.section.footer.val = footer()
 
     local greeting = function()
@@ -105,6 +105,7 @@ return {
       else
         mesg = "Hi " .. username .. ", it's getting late, get some sleep 😴"
       end
+
       return mesg
     end
 
@@ -160,9 +161,9 @@ return {
       layout = {
         { type = "padding", val = 1 },
         section.header,
-        { type = "padding", val = 2 },
-        section.buttons,
-        { type = "padding", val = 1 },
+        -- { type = "padding", val = 2 },
+        -- section.buttons,
+        { type = "padding", val = 7 },
         section.bottom_section,
         { type = "padding", val = 1 },
         section.footer,
@@ -176,7 +177,7 @@ return {
       vim.api.nvim_create_autocmd("User", {
         once = true,
         pattern = "AlphaReady",
-        callback = function()
+        callcleback = function()
           require("lazy").show()
         end,
       })
