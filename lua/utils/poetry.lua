@@ -29,6 +29,44 @@ local poem = {
     "Trùng san đăng đáo cao phong hậu",
     "Vạn lý dư đồ cố miện gian.",
   },
+  {
+    "Một mai, một cuốc, một cần câu,",
+    "Thơ thẩn dầu ai vui thú nào.",
+    "Ta dại, ta tìm nơi vắng vẻ,",
+    "Người khôn, người đến chốn lao xao.",
+    "Thu ăn măng trúc, đông ăn giá,",
+    "Xuân tắm hồ sen, hạ tắm ao.",
+    "Rượu đến bóng cây ta hãy uống,",
+    "Nhìn xem phú quý tựa chiêm bao.",
+  },
+  {
+    "Thân em thời trắng phận em tròn,",
+    "Bảy nổi ba chìm mấy nước non.",
+    "Rắn nát mặc dầu tay kẻ nặn,",
+    "Nhưng em vẫn giữ tấm lòng son.",
+  },
+  {
+    "Bác mẹ sinh ra phận ốc nhồi,",
+    "Đêm ngày lăn lóc đám cỏ hôi.",
+    "Quân tử có thương thì bóc yếm",
+    "Xin đừng ngó ngoáy lỗ trôn tôi.",
+  },
+  {
+    "Khéo khéo đi đâu lũ ngẩn ngơ,",
+    "Lại đây chị dạy lối làm thơ.",
+    "Bướm non ngứa lợi châm hoa rữa,",
+    "Dê bé buồn sừng húc giậu thưa.",
+  },
+  {
+    "Trời đất sinh ra đá một chòm,",
+    "Nứt làm đôi mảnh hổng hòm hom.",
+    "Kẽ hầm rêu mọc trơ toen hoẻn,",
+    "Luồng gió thông reo vố phập phồm.",
+    "Giọt nước hữu trình rơi lõm bõm",
+    "Con đường vô ngạn tối om om.",
+    "Khen ai đẽo đá tài xuyên tạc,",
+    "Khéo hớ hênh ra lắm kẻ dòm.",
+  },
 }
 
 local function get_header(index, random)
@@ -41,7 +79,7 @@ local function get_header(index, random)
     return poem[index]
   else
     -- Default to the first header if neither is specified
-    return poem[1]
+    return poem[6]
   end
 end
 
