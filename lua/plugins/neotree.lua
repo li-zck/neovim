@@ -4,18 +4,16 @@ return {
     window = {
       width = 30,
     },
+    -- filesystem = {
+    --   filtered_items = {
+    --     visible = true,
+    --     hide_dotfiles = false,
+    --     hide_gitignored = false,
+    --     hide_hidden = true,
+    --     hide_by_name = {
+    --       ".git",
+    --     },
+    --   },
+    -- },
   },
-  require("neo-tree").setup({
-    filesystem = {
-      filtered_items = {
-        visible = true,
-        hide_dotfiles = false,
-        hide_gitignored = false,
-        hide_hidden = false,
-        hide_by_name = {
-          ".git",
-        },
-      },
-    },
-  }),
 }
