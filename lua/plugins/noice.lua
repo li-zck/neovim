@@ -6,15 +6,17 @@ return {
 
   opts = {
     cmdline = {
-      -- enabled = false,
       view = "cmdline",
     },
+
     presets = {
       command_palette = false,
     },
+
     messsages = {
-      enabled = false,
+      enabled = true,
     },
+
     popupmenu = {
       enabled = true,
     },
