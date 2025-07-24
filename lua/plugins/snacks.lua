@@ -60,6 +60,11 @@ return {
           trace = " ",
         },
       },
+
+      -- QUICK FILE --
+      quickfile = {
+        exclude = { "latext" },
+      },
     }
   end,
 }
