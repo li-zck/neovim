@@ -68,11 +68,11 @@ return {
 
       -- STATUS COLUMN --
       statuscolumn = {
-        left = { "mark", "sign" }, -- priority of signs on the left (high to low)
-        right = { "fold", "git" }, -- priority of signs on the right (high to low)
+        left = { "mark", "sign" },
+        right = { "fold", "git" },
         folds = {
-          open = false, -- show open fold icons
-          git_hl = false, -- use Git Signs hl for fold icons
+          open = false,
+          git_hl = false,
         },
         git = {
           -- patterns to match Git signs
@@ -85,6 +85,137 @@ return {
       words = {
         enabled = true,
       },
+
+      -- STYLE --
+      styles = {
+        snacks_image = {
+          snacks_image = function()
+            return {
+              relative = "cursor",
+              border = "none",
+              focusable = false,
+              backdrop = false,
+              row = 0,
+              col = 0,
+            }
+          end,
+        },
+      },
+
+      -- IMAGE --
+      image = {
+        formats = {
+          "png",
+          "jpg",
+          "jpeg",
+          "gif",
+          "bmp",
+          "webp",
+          "tiff",
+          "heic",
+          "avif",
+          "mp4",
+          "mov",
+          "avi",
+          "mkv",
+          "webm",
+          "pdf",
+        },
+
+        force = true,
+
+        doc = {
+          enabled = true,
+          inline = false,
+          float = true,
+          max_width = 60,
+          max_height = 30,
+        },
+
+        wo = {
+          wrap = false,
+          number = false,
+          relativenumber = false,
+          cursorcolumn = false,
+          signcolumn = "no",
+          foldcolumn = "0",
+          statuscolumn = "",
+        },
+
+        convert = {
+          notify = true,
+          magick = {
+            default = { "{src}[0]", "-scale", "1280x720>" },
+            vector = { "-density", 192, "{src}[0]" },
+            math = { "-density", 192, "{src}[0]", "-trim" },
+            pdf = { "-density", 192, "{src}[0]", "-background", "white", "-alpha", "remove", "-trim" },
+          },
+        },
+
+        -- env = {
+        --   SNACKS_GHOSTTY = true,
+        -- },
+
+        icons = {
+          math = "󰪚 ",
+          chart = "󰄧 ",
+          image = " ",
+        },
+
+        typst = {
+          tpl = [[
+        #set page(width: auto, height: auto, margin: (x: 2pt, y: 2pt))
+        #show math.equation.where(block: false): set text(top-edge: "bounds", bottom-edge: "bounds")
+        #set text(size: 12pt, fill: rgb("${color}"))
+        ${header}
+        ${content}]],
+        },
+      },
+
+      -- EXPLORER --
+      explorer = {
+        enabled = true,
+      },
+
+      -- PICKER --
+      picker = {
+        enabled = true,
+        sources = {
+          explorer = {
+            layout = {
+              layout = {
+                width = 30,
+              },
+            },
+          },
+        },
+        -- hidden = true,
+        -- ignored = true,
+      },
+
+      -- SCOPE --
+      scope = {
+        enabled = true,
+      },
+
+      -- SCROLL --
+      scroll = {
+        enabled = true,
+      },
+
+      -- INPUT --
+      input = {
+        enabled = true,
+      },
     }
   end,
+
+  -- config = function()
+  --   vim.api.nvim_create_autocmd("FileType", {
+  --     pattern = "snacks",
+  --     callback = function()
+  --       vim.cmd("vertical resize 30")
+  --     end,
+  --   })
+  -- end,
 }
