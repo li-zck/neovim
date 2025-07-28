@@ -104,6 +104,7 @@ return {
 
       -- IMAGE --
       image = {
+        enabled = true,
         formats = {
           "png",
           "jpg",
@@ -173,25 +174,33 @@ return {
       },
 
       -- EXPLORER --
-      explorer = {
-        enabled = true,
-      },
+      -- explorer = {
+      --   enabled = true,
+      -- },
 
       -- PICKER --
-      picker = {
-        enabled = true,
-        sources = {
-          explorer = {
-            layout = {
-              layout = {
-                width = 30,
-              },
-            },
-          },
-        },
-        -- hidden = true,
-        -- ignored = true,
-      },
+      -- picker = {
+      --   enabled = true,
+      --   sources = {
+      --     explorer = {
+      --       win = {
+      --         list = {
+      --           keys = {},
+      --         },
+      --       },
+      --       -- actions = {
+      --       --   explorer_cut = function(picker, item) end,
+      --       -- },
+      --       layout = {
+      --         layout = {
+      --           width = 30,
+      --         },
+      --       },
+      --     },
+      --   },
+      -- hidden = true,
+      -- ignored = true,
+      -- },
 
       -- SCOPE --
       scope = {
