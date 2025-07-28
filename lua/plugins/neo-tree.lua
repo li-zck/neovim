@@ -12,6 +12,7 @@ return {
           deleted = "✖",
           modified = "",
           renamed = "",
+
           -- Status type
           untracked = "",
           ignored = "",
