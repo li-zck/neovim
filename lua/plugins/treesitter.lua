@@ -27,6 +27,7 @@ return {
       "svelte",
       "typst",
       "vue",
+      "norg",
     },
   },
 }
