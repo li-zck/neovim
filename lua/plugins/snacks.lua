@@ -143,16 +143,6 @@ return {
           statuscolumn = "",
         },
 
-        convert = {
-          notify = true,
-          magick = {
-            default = { "{src}[0]", "-scale", "1280x720>" },
-            vector = { "-density", 192, "{src}[0]" },
-            math = { "-density", 192, "{src}[0]", "-trim" },
-            pdf = { "-density", 192, "{src}[0]", "-background", "white", "-alpha", "remove", "-trim" },
-          },
-        },
-
         -- env = {
         --   SNACKS_GHOSTTY = true,
         -- },
@@ -161,15 +151,6 @@ return {
           math = "󰪚 ",
           chart = "󰄧 ",
           image = " ",
-        },
-
-        typst = {
-          tpl = [[
-        #set page(width: auto, height: auto, margin: (x: 2pt, y: 2pt))
-        #show math.equation.where(block: false): set text(top-edge: "bounds", bottom-edge: "bounds")
-        #set text(size: 12pt, fill: rgb("${color}"))
-        ${header}
-        ${content}]],
         },
       },
 
@@ -216,15 +197,30 @@ return {
       input = {
         enabled = true,
       },
+
+      -- LAZYGIT --
+      lazygit = {
+        configure = true,
+
+        config = {
+          os = {
+            editPreset = "nvim-remote",
+          },
+          gui = {
+            nerdFontsVersion = "3",
+          },
+        },
+      },
     }
   end,
 
-  -- config = function()
-  --   vim.api.nvim_create_autocmd("FileType", {
-  --     pattern = "snacks",
-  --     callback = function()
-  --       vim.cmd("vertical resize 30")
-  --     end,
-  --   })
-  -- end,
+  keys = {
+    {
+      ";c",
+      function()
+        require("snacks.lazygit").open()
+      end,
+      desc = "Toggle Snacks LazyGit",
+    },
+  },
 }
