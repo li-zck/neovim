@@ -1,9 +1,9 @@
 return {
   -- "Aasim-A/scrollEOF.nvim",
-  -- -- event = { "CursorMoved", "WinScrolled" },
+  -- event = { "CursorMoved", "WinScrolled" },
   -- opts = {
   --   pattern = "*",
-  --   insert_mode = true,
+  --   insert_mode = false,
   --   floating = false,
   --   disabled_filetypes = {},
   --   disabled_mode = { "i" },
