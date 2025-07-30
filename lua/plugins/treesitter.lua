@@ -28,6 +28,7 @@ return {
       "typst",
       "vue",
       "norg",
+      "hurl",
     },
   },
 }
