@@ -1,35 +1,35 @@
 return {
-  "NStefan002/screenkey.nvim",
-  lazy = false,
-  version = "*",
-
-  config = function(_, opts)
-    require("screenkey").setup(opts)
-    vim.api.nvim_create_autocmd("VimEnter", {
-      group = vim.api.nvim_create_augroup("AutostartScreenkey", {}),
-      command = "Screenkey toggle",
-      desc = "Autostart Screenkey on VimEnter",
-    })
-  end,
-
-  opts = {
-    win_opts = {
-      -- border = "rounded",
-      -- title = "UwU",
-      -- anchor = "SW",
-      -- col = 0,
-      row = vim.o.lines - vim.o.cmdheight - 1,
-      col = 4, -- left edge
-      relative = "editor",
-      anchor = "SW", -- bottom-left
-      width = 20,
-      height = 3,
-      border = "rounded",
-      title = "UwU",
-      title_pos = "center",
-      style = "minimal",
-      focusable = false,
-      noautocmd = true,
-    },
-  },
+  --   "NStefan002/screenkey.nvim",
+  --   lazy = false,
+  --   version = "*",
+  --
+  --   config = function(_, opts)
+  --     require("screenkey").setup(opts)
+  --     vim.api.nvim_create_autocmd("VimEnter", {
+  --       group = vim.api.nvim_create_augroup("AutostartScreenkey", {}),
+  --       command = "Screenkey toggle",
+  --       desc = "Autostart Screenkey on VimEnter",
+  --     })
+  --   end,
+  --
+  --   opts = {
+  --     win_opts = {
+  --       -- border = "rounded",
+  --       -- title = "UwU",
+  --       -- anchor = "SW",
+  --       -- col = 0,
+  --       row = 1,
+  --       col = vim.o.columns - 1,
+  --       relative = "editor",
+  --       anchor = "SE",
+  --       width = 5,
+  --       height = 1,
+  --       border = "rounded",
+  --       title = "UwU",
+  --       title_pos = "center",
+  --       style = "minimal",
+  --       focusable = false,
+  --       noautocmd = true,
+  --     },
+  --   },
 }
