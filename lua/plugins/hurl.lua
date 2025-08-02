@@ -21,6 +21,9 @@ return {
     show_notification = false,
     -- Show response in popup or split
     mode = "split",
+    -- split_position = "bottom",
+    -- split_size = "50%",
+
     -- Default formatter
     formatters = {
       json = { "jq" }, -- Make sure you have install jq in your system, e.g: brew install jq
