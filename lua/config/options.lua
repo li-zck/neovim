@@ -6,6 +6,9 @@
 -- color
 vim.opt.termguicolors = true
 
+-- snacks
+vim.g.snacks_animate = false
+
 vim.g.mapleader = " "
 
 vim.scriptencoding = "utf-8"
