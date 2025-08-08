@@ -5,7 +5,7 @@ require("config.options")
 -- global lazyVim
 -- cursorline
 -- vim.api.nvim_set_hl(0, "CursorLine", { bg = "#1e1e2e" })
--- vim.o.cursorline = false
+vim.o.cursorline = false
 
 -- helpers
 -- local alpha = function()
