@@ -29,6 +29,7 @@ return {
       "vue",
       "norg",
       "hurl",
+      "go",
     },
   },
 }
