@@ -74,4 +74,10 @@ return {
     "<cmd>lua require('package-info').change_version()<CR>",
     { silent = true, noremap = true, desc = "Change package version" }
   ),
+
+  -- NOTE: general keymaps
+  keymap("n", "<A-j>", ":m .+1<CR>=="), -- move current line down (n)
+  keymap("n", "<A-k>", ":m .-2<CR>=="), -- move current line up (n)
+  keymap("v", "<A-j>", ":m '>+1<CR>gv=gv"), -- move current line down (v)
+  keymap("v", "<A-k>", ":m '<-2<CR>gv=gv"), -- move current line up (v)
 }
