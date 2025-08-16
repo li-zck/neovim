@@ -5,6 +5,7 @@
 -- general nvim settings
 -- color
 vim.opt.termguicolors = true
+vim.o.guicursor = "n-v-c-i:block"
 
 -- snacks
 vim.g.snacks_animate = false
@@ -28,7 +29,7 @@ vim.opt.showcmd = true
 vim.opt.cmdheight = 0
 vim.opt.laststatus = 0
 vim.opt.expandtab = true
-vim.opt.scrolloff = 19
+vim.opt.scrolloff = 20
 vim.opt.inccommand = "split"
 vim.opt.ignorecase = true
 vim.opt.smarttab = true
