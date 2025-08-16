@@ -127,10 +127,10 @@ return {
 
         doc = {
           enabled = true,
-          inline = false,
+          inline = true,
           float = true,
-          max_width = 60,
-          max_height = 30,
+          max_width = 30,
+          max_height = 15,
         },
 
         wo = {
@@ -179,8 +179,8 @@ return {
       --       },
       --     },
       --   },
-      -- hidden = true,
-      -- ignored = true,
+      --   hidden = true,
+      --   ignored = true,
       -- },
 
       -- SCOPE --
