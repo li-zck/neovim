@@ -4,6 +4,8 @@ return {
     window = {
       width = 25,
     },
+    hide_root_node = true,
+    retain_hidden_root_indent = true,
     default_component_configs = {
       git_status = {
         symbols = {
