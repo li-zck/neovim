@@ -71,6 +71,16 @@ local poem = {
     "Nên nính thượng thức cao thâm xứ,",
     "Mạc quái anh hùng lưỡng thủ mô.",
   },
+  {
+    "Hỏi thế gian tình ái là chi",
+    "Mà đôi lứa thề nguyền sống chết",
+    "Nam bắc hai đàng rồi ly biệt",
+    "Mưa dầm dãi nắng hai ngả quan san",
+    "Thiếp nhớ chàng muôn ngàn đau khổ",
+    "Thiếp nhớ chàng khốn khổ xiết bao",
+    "Giờ chàng đang ở nơi nao",
+    "Nhấp nhô mây núi nao nao cõi lòng.",
+  },
 }
 
 local function get_header(index, random)
