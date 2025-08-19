@@ -9,8 +9,22 @@ return {
         delete = "gsd",
         change = "gsc",
         visual = "gsa",
-        -- insert = false,
       },
+      -- surrounds = {
+      --   ['"'] = {
+      --     add = { '"', '"' },
+      --     find = function()
+      --       return require("nvim-surround.config").get_selection({ motion = 'a"' })
+      --     end,
+      --     delete = "^(.)().-(.)()$",
+      --     change = {
+      --       target = '^"().-()()"$',
+      --       replacement = function()
+      --         return require("nvim-surround.config").get_input("Enter the new delimiter: ")
+      --       end,
+      --     },
+      --   },
+      -- },
     })
   end,
 }
