@@ -211,6 +211,11 @@ return {
           },
         },
       },
+
+      -- SCRATCH BUFFER --
+      scratch = {
+        icon = nil,
+      },
     }
   end,
 
