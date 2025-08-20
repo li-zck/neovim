@@ -1,28 +1,18 @@
 return {
-  -- {
-  --   "mrcjkb/rustaceanvim",
-  --   version = "^6",
-  --   lazy = false,
-  --   config = function()
-  --     local mason_registry = require("mason-registry")
-  --     local codelldb = mason_registry.get_package("codelldb")
-  --     local extension_path = codelldb:get_install_path() .. "/extension/"
-  --     local codelldb_path = extension_path .. "adapter/codelldb"
-  --     local liblldb_path = extension_path .. "lldb/lib/liblldb.dylib"
-  --     local cfg = require("rustaceanvim.config")
-  --
-  --     vim.g.rustaceanvim = {
-  --       dap = {
-  --         adapter = cfg.get_codelldb_adapter(codelldb_path, liblldb_path),
-  --       },
-  --     }
-  --   end,
-  -- },
-
   {
     "mfussenegger/nvim-dap",
+    dependencies = {
+      "leoluz/nvim-dap-go",
+      "theHamsta/nvim-dap-virtual-text",
+      "nvim-neotest/nvim-nio",
+      "rcarriga/nvim-dap-ui",
+    },
     config = function()
-      local dap, dapui = require("dap"), require("dapui")
+      local dap = require("dap")
+      local dapui = require("dapui")
+
+      dapui.setup()
+
       dap.listeners.before.attach.dapui_config = function()
         dapui.open()
       end
@@ -38,11 +28,34 @@ return {
     end,
   },
 
+  -- NVIM DAP UI --
   {
     "rcarriga/nvim-dap-ui",
+  },
+
+  -- NVIM NIO --
+  {
+    "nvim-neotest/nvim-nio",
+  },
+
+  -- NVIM DAP VIRTUAL TEXT --
+  {
+    "theHamsta/nvim-dap-virtual-text",
+    opt = {},
+  },
+
+  -- NVIM DAP PYTHON --
+  {
+    "mfussenegger/nvim-dap-python",
+    ft = "python",
     dependencies = {
       "mfussenegger/nvim-dap",
-      "nvim-neotest/nvim-nio",
+      "rcarriga/nvim-dap-ui",
     },
+    config = function(_, opts)
+      local path = "/Users/lee/.local/share/nvim/mason/packages/debugpy/venv/bin/python3.13"
+
+      require("dap-python").setup(path)
+    end,
   },
 }
