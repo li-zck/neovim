@@ -1,9 +1,6 @@
--- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
-
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
+
 -- Go to next diagnostic
 keymap("n", "<C-j>", function()
   vim.diagnostic.goto_next()
@@ -15,7 +12,9 @@ keymap("n", "<C-k>", function()
 end)
 
 return {
-  -- DAP keymaps
+  -- NOTE: PLUGIN KEYMAPS
+
+  -- DAP KEYMAPS
   -- Debugger Commands (mostly align with LazyVim defaults)
   keymap("n", "<leader>di", "<cmd>lua require('dap').step_into()<CR>", { desc = "Debugger step into" }),
   keymap("n", "<leader>dj", "<cmd>lua require('dap').step_over()<CR>", { desc = "Debugger step over" }),
@@ -34,12 +33,15 @@ return {
   keymap("n", "<leader>de", "<cmd>lua require('dap').terminate()<CR>", { desc = "Debugger reset" }),
   keymap("n", "<leader>dr", "<cmd>lua require('dap').run_last()<CR>", { desc = "Debugger run last" }),
 
+  -- DAP PYTHON --
+  keymap("n", "<leader>dpr", "<cmd>lua require('dap-python').test_method()<CR>", { desc = "DAP Python Test" }),
+
   -- rustaceanvim specific command:
-  keymap("n", "<leader>dT", "<cmd>lua vim.cmd('RustLsp testables')<CR>", { desc = "RustLsp testables" }),
+  -- keymap("n", "<leader>dT", "<cmd>lua vim.cmd('RustLsp testables')<CR>", { desc = "RustLsp testables" }),
   -- If you prefer <leader>rt, use:
   -- keymap("n", "<leader>rt", "<cmd>lua vim.cmd('RustLsp testables')<CR>", { desc = "RustLsp testables" }),
 
-  -- package-info keymaps
+  -- PACKAGEINFO --
   keymap(
     "n",
     "<leader>cpt",
