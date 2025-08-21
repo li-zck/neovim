@@ -1,10 +1,11 @@
 return {
   {
     "neovim/nvim-lspconfig",
-    ---@class PluginLspOpts
+    dependencies = {
+      "jose-elias-alvarez/typescript.nvim",
+    },
     opts = {
       inlay_hints = { enabled = true },
-      ---@type lspconfig.options
       servers = {
         cssls = {},
         tailwindcss = {
@@ -13,16 +14,7 @@ return {
           end,
         },
 
-        -- tsserver = {
-        --   root = function(...)
-        --     return require("lspconfig.util").root_pattern(".git")(...)
-        --   end,
-        --   single_file_support = false,
-        -- },
-
-        html = {},
         lua_ls = {
-          -- enabled = false,
           single_file_support = true,
           settings = {
             Lua = {
@@ -78,16 +70,21 @@ return {
               },
               format = {
                 enable = false,
-                defaultConfig = {
-                  indent_style = "space",
-                  indent_size = "2",
-                  continuation_indent_size = "2",
-                },
+                -- defaultConfig = {
+                --   indent_style = "space",
+                --   indent_size = "2",
+                --   continuation_indent_size = "2",
+                -- },
               },
             },
           },
-          -- pyright will be automatically installed with mason and loaded with lspconfig
-          pyright = {},
+
+          pyright = {
+            filetypes = {
+              "python",
+              "markdown",
+            },
+          },
 
           efm = {
             filetypes = {
@@ -96,7 +93,9 @@ return {
               "typescript",
               "json",
               "lua",
+              "markdown",
             },
+
             root_dir = function(fname)
               return require("lspconfig.util").root_pattern(
                 "package.json",
@@ -107,6 +106,7 @@ return {
                 "foundry.toml"
               )(fname)
             end,
+
             settings = {
               ["solidity"] = {
                 format_on_save = {
@@ -128,52 +128,6 @@ return {
                 },
               },
             },
-          },
-        },
-        -- solidity_ls = {
-        --   capabilities = require("lspconfig").util.default_config.capabilities,
-        --   on_attach = require("lazyvim.util").lsp.on_attach,
-        --   filetypes = { "solidity" },
-        --   root_dir = require("lspconfig.util").root_pattern(
-        --     "hardhat.config.js",
-        --     "truffle-config.js",
-        --     "foundry.toml",
-        --     ".git"
-        --   ),
-        -- },
-      },
-
-      -- add tsserver and setup with typescript.nvim instead of lspconfig
-      {
-        "neovim/nvim-lspconfig",
-        dependencies = {
-          "jose-elias-alvarez/typescript.nvim",
-          init = function()
-            require("lazyvim.util").lsp.on_attach(function(_, buffer)
-          -- stylua: ignore
-          vim.keymap.set( "n", "<leader>co", "typescriptorganizeimports", { buffer = buffer, desc = "organize imports" })
-              vim.keymap.set("n", "<leader>cr", "typescriptrenamefile", { desc = "rename file", buffer = buffer })
-            end)
-          end,
-        },
-        ---@class pluginlspopts
-        opts = {
-          ---@type lspconfig.options
-          servers = {
-            -- tsserver will be automatically installed with mason and loaded with lspconfig
-            -- tsserver = {},
-          },
-          -- you can do any additional lsp server setup here
-          -- return true if you don't want this server to be setup with lspconfig
-          ---@type table<string, fun(server:string, opts:_.lspconfig.options):boolean?>
-          setup = {
-            -- example to setup with typescript.nvim
-            -- tsserver = function(_, opts)
-            --   require("typescript").setup({ server = opts })
-            --   return true
-            -- end,
-            -- specify * to use this function as a fallback for any server
-            -- ["*"] = function(server, opts) end,
           },
         },
       },
