@@ -53,7 +53,7 @@ return {
       "rcarriga/nvim-dap-ui",
     },
     config = function(_, opts)
-      local path = "/Users/lee/.local/share/nvim/mason/packages/debugpy/venv/bin/python3.13"
+      local path = "/Users/lee/.local/share/nvim/mason/packages/debugpy/venv/bin/python3"
 
       require("dap-python").setup(path)
     end,
