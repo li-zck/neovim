@@ -160,7 +160,9 @@ return {
       -- },
 
       -- PICKER --
-      -- picker = {
+      picker = {
+        enabled = true,
+      },
       --   enabled = true,
       --   sources = {
       --     explorer = {
