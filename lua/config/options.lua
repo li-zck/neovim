@@ -1,16 +1,16 @@
--- Options are automatically loaded before lazy.nvim startup
--- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
--- Add any additional options here
-
 -- general nvim settings
 -- color
 vim.opt.termguicolors = true
 vim.o.guicursor = "n-v-c-i:block"
+vim.o.cursorline = false
 
 -- snacks
 vim.g.snacks_animate = false
 
 vim.g.mapleader = " "
+
+-- prefer 'cwd' than 'lsp'
+vim.g.root_spec = { { ".git", "lua" }, "cwd", "lsp" }
 
 vim.scriptencoding = "utf-8"
 vim.opt.encoding = "utf-8"
@@ -19,6 +19,7 @@ vim.opt.fileencoding = "utf-8"
 vim.opt.number = true
 
 vim.o.cmdheight = 1
+vim.o.winborder = "none"
 
 vim.opt.title = true
 vim.opt.autoindent = true
@@ -50,7 +51,6 @@ vim.opt.equalalways = false
 vim.opt.formatoptions:append({ "r" })
 
 -- NOTE: MOLTEN
-
 vim.g.python3_host_prog = vim.fn.expand("/Users/lee/.virtualenvs/neovim/bin/python3")
 
 -- I find auto open annoying, keep in mind setting this option will require setting
