@@ -100,6 +100,15 @@ return {
             }
           end,
         },
+        float = {
+          backdrop = 100,
+        },
+        input = {
+          wo = {
+            winhighlight = "NormalFloat:SnacksInputNormal,FloatBorder:SnacksInputBorder,FloatTitle:SnacksInputTitle",
+            cursorline = false,
+          },
+        },
       },
 
       -- IMAGE --
@@ -155,35 +164,72 @@ return {
       },
 
       -- EXPLORER --
-      -- explorer = {
-      --   enabled = true,
-      -- },
+      explorer = {
+        enabled = true,
+        replace_netrw = true,
+      },
 
       -- PICKER --
       picker = {
         enabled = true,
+        border = "single",
+        hidden = false,
+        ignored = false,
+        previewers = {
+          file = {
+            max_line_height = 300,
+          },
+        },
+        layout = {
+          reverse = true,
+          layout = {
+            -- box = function()
+            --   return vim.o.columns >= 120 and "horizontal" or "vertical"
+            -- end,
+            box = "vertical",
+            width = function()
+              return vim.o.columns >= 120 and 0.6 or 0.8
+            end,
+            height = 0.9,
+            border = "none",
+            {
+              box = "vertical",
+              { win = "list", title = " Results ", title_pos = "center", border = "rounded" },
+              { win = "input", height = 1, border = "rounded", title = "{title} {live} {flags}", title_pos = "center" },
+            },
+            {
+              win = "preview",
+              title = "{preview:Preview}",
+              -- width = 0.6,
+              border = "rounded",
+              title_pos = "center",
+            },
+          },
+
+          -- preset = function()
+          --   return vim.o.columns >= 120 and "telescope" or "vertical"
+          -- end,
+        },
+
+        sources = {
+          explorer = {
+            auto_close = true,
+            exclude = {
+              ".git",
+              "node_modules",
+            },
+            layout = {
+              layout = {
+                position = "float",
+                width = 60,
+                height = 30,
+                preview = false,
+                preset = "float",
+              },
+            },
+          },
+        },
       },
-      --   enabled = true,
-      --   sources = {
-      --     explorer = {
-      --       win = {
-      --         list = {
-      --           keys = {},
-      --         },
-      --       },
-      --       -- actions = {
-      --       --   explorer_cut = function(picker, item) end,
-      --       -- },
-      --       layout = {
-      --         layout = {
-      --           width = 30,
-      --         },
-      --       },
-      --     },
-      --   },
-      --   hidden = true,
-      --   ignored = true,
-      -- },
 
       -- SCOPE --
       scope = {
@@ -218,6 +264,15 @@ return {
       scratch = {
         icon = nil,
       },
+
+      -- WIN --
+      win = {
+        show = true,
+        wo = {
+          winhighlight = "Normal:Normal,NormalFloat:Normal,FloatBorder:Normal",
+        },
+        bo = {},
+      },
     }
   end,
 
@@ -228,6 +283,18 @@ return {
         require("snacks.lazygit").open()
       end,
       desc = "Toggle Snacks LazyGit",
+    },
+    {
+      "<leader>e",
+      function()
+        require("snacks.explorer").open()
+      end,
+      desc = "Toggle Snacks Explorer",
+    },
+    {
+      "<leader><leader>",
+      "<cmd>lua Snacks.picker.files()<CR>",
+      desc = "Snacks Picker cwd",
     },
   },
 }
