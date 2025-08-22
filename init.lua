@@ -1,16 +1,11 @@
--- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
 require("config.options")
 
--- global lazyVim
--- cursorline
--- vim.api.nvim_set_hl(0, "CursorLine", { bg = "#1e1e2e" })
-vim.o.cursorline = false
-
--- helpers
--- local alpha = function()
---   return string.format("%x", math.floor((255 * vim.g.transparency) or 0.8))
--- end
+-- floating window
+-- vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#1e1e2e", bg = "#1e1e2e" })
+vim.api.nvim_set_hl(0, "FloatBorder", { bg = "#1e1e2e" })
+-- vim.api.nvim_set_hl(0, "NormalFloat", { fg = "#1e1e2e", bg = "#1e1e2e" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#1f1e2f" })
 
 -- neovide settings
 if vim.g.neovide then
