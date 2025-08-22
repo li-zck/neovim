@@ -1,5 +1,10 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
+  dependencies = {
+    "MunifTanjim/nui.nvim",
+    "nvim-tree/nvim-web-devicons",
+  },
+  enabled = false,
   opts = {
     window = {
       width = 25,
