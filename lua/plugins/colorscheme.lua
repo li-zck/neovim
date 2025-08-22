@@ -1,22 +1,62 @@
 return {
   -- CATPPUCCIN --
-  -- {
-  --   "catppuccin/nvim",
-  --   name = "catppuccin",
-  --   priority = 1000,
-  --   opts = {
-  --     transparent_background = true,
-  --     flavor = "frappe",
-  --     background = {
-  --       light = "latte",
-  --       dark = "frappe",
-  --     },
-  --   },
-  --
-  --   init = function()
-  --     vim.cmd.colorscheme("catppuccin")
-  --   end,
-  -- },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    lazy = false,
+    require("catppuccin").setup({
+      flavour = "mocha",
+      term_colors = false,
+      transparent_background = true,
+      float = {
+        transparent = false,
+        solid = false,
+      },
+      custom_highlights = function(colors)
+        return {
+          FloatBorder = {
+            bg = colors.none,
+            fg = colors.none,
+          },
+          FloatTitle = {
+            bg = colors.none,
+            fg = colors.none,
+          },
+          NormalBorder = {
+            bg = colors.none,
+            fg = colors.none,
+          },
+        }
+      end,
+      styles = {
+        comments = {},
+        conditionals = {},
+        loops = {},
+        functions = {},
+        keywords = {},
+        strings = {},
+        variables = {},
+        numbers = {},
+        booleans = {},
+        properties = {},
+        types = {},
+      },
+      color_overrides = {
+        mocha = {
+          base = "#000000",
+          mantle = "#000000",
+          crust = "#000000",
+        },
+      },
+      -- default_integrations = true,
+      -- integrations = {
+      --   snacks = {
+      --     enabled = true,
+      --   },
+      -- },
+    }),
+  },
 
   -- ROSE-PINE --
   -- {
@@ -77,11 +117,22 @@ return {
   -- },
 
   -- GRUV BOX --
-  {
-    "ellisonleao/gruvbox.nvim",
-    priority = 1000,
-    config = true,
-  },
+  -- {
+  --   "ellisonleao/gruvbox.nvim",
+  --   priority = 1000,
+  --   config = true,
+  -- },
+
+  -- {
+  --   "Shatur/neovim-ayu",
+  --   config = function()
+  --     require("ayu").setup({
+  --       terminal = true,
+  --       mirage = true,
+  --       overrides = {},
+  --     })
+  --   end,
+  -- },
 
   -- ELDRITCH --
   -- {
