@@ -1,0 +1,30 @@
+return {
+  "stevearc/aerial.nvim",
+  dependencies = {
+    "nvim-treesitter/nvim-treesitter",
+    "nvim-tree/nvim-web-devicons",
+  },
+  config = function()
+    require("aerial").setup({
+      backends = { "treesitter", "lsp", "markdown", "asciidoc", "man" },
+      layout = {},
+
+      -- attach keybinds
+      on_attach = function(bufnr)
+        vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { buffer = bufnr })
+        vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", { buffer = bufnr })
+      end,
+    })
+
+    -- require("aerial").snacks_picker({
+    --   layout = {
+    --     preset = "markdown",
+    --     -- preview = false,
+    --   },
+    -- })
+
+    -- keybinds
+    vim.keymap.set("n", "<leader>aa", "<cmd>AerialToggle!<CR>", { desc = "Toggle Aerial" })
+    vim.keymap.set("n", "<leader>af", "<cmd>AerialToggle float<CR>", { desc = "Toggle Floating Aerial" })
+  end,
+}
