@@ -24,9 +24,9 @@ require("lazy").setup({
       "LazyVim/LazyVim",
       opts = {
         colorscheme = "catppuccin",
-        ui = {
-          backdrop = false,
-        },
+        -- ui = {
+        --   backdrop = true,
+        -- },
       },
     },
   },
