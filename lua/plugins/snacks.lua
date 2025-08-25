@@ -294,7 +294,12 @@ return {
     {
       "<leader><leader>",
       "<cmd>lua Snacks.picker.files()<CR>",
-      desc = "Snacks Picker cwd",
+      desc = "Snacks Picker cwd files",
+    },
+    {
+      "<leader>sg",
+      "<cmd>lua Snacks.picker.grep()<CR>",
+      desc = "Snacks Picker cwd grep",
     },
   },
 }
