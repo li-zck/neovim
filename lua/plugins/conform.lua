@@ -1,21 +1,33 @@
 return {
   "stevearc/conform.nvim",
-  opts = {
+  require("conform").setup({
     formatters_by_ft = {
+      lua = {
+        "stylua",
+      },
+      go = {
+        "gofmt",
+      },
+      rust = {
+        "rustfmt",
+        lsp_format = "fallback",
+      },
       javascript = {
-        "prettier",
+        "prettierd",
       },
       typescript = {
-        "prettier",
         "prettierd",
       },
       typescriptreact = {
-        "prettier",
         "prettierd",
       },
       javascriptreact = {
-        "prettier",
+        "prettierd",
       },
     },
-  },
+    format_on_save = {
+      timeout_ms = 500,
+      lsp_format = "fallback",
+    },
+  }),
 }
