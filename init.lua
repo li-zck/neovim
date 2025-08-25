@@ -2,10 +2,8 @@ require("config.lazy")
 require("config.options")
 
 -- floating window
--- vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#1e1e2e", bg = "#1e1e2e" })
-vim.api.nvim_set_hl(0, "FloatBorder", { bg = "#1e1e2e" })
--- vim.api.nvim_set_hl(0, "NormalFloat", { fg = "#1e1e2e", bg = "#1e1e2e" })
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#1f1e2f" })
+vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
+vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" })
 
 -- neovide settings
 if vim.g.neovide then
