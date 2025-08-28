@@ -7,28 +7,45 @@ return {
     lazy = false,
     opts = {
       flavour = "mocha",
+      background = {
+        light = "latte",
+        dark = "mocha",
+      },
       term_colors = false,
       transparent_background = true,
       float = {
         transparent = true,
         solid = true,
+        -- single = true,
       },
-      -- custom_highlights = function(colors)
-      --   return {
-      --     FloatBorder = {
-      --       bg = colors.none,
-      --       fg = colors.none,
-      --     },
-      --     FloatTitle = {
-      --       bg = colors.none,
-      --       fg = colors.none,
-      --     },
-      --     NormalBorder = {
-      --       bg = colors.none,
-      --       fg = colors.none,
-      --     },
-      --   }
-      -- end,
+      custom_highlights = function(colors)
+        return {
+          TabLineSel = {
+            fg = colors.flamigo,
+          },
+          TabLine = {
+            fg = colors.pink,
+          },
+          CmpBorder = {
+            fg = colors.pink,
+            bg = colors.pink,
+          },
+          Pmenu = {
+            bg = colors.none,
+          },
+        }
+      end,
+
+      integrations = {
+        cmp = true,
+        treesitter = true,
+        snacks = {
+          enabled = true,
+        },
+        blink_cmp = {
+          style = "bordered",
+        },
+      },
       -- styles = {
       --   comments = {},
       --   conditionals = {},
@@ -50,11 +67,6 @@ return {
       --   },
       -- },
       -- default_integrations = true,
-      -- integrations = {
-      --   snacks = {
-      --     enabled = true,
-      --   },
-      -- },
     },
   },
 
