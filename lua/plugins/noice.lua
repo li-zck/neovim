@@ -20,5 +20,11 @@ return {
     popupmenu = {
       enabled = true,
     },
+
+    lsp = {
+      hover = {
+        silent = true,
+      },
+    },
   },
 }
