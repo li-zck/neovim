@@ -21,7 +21,7 @@ return {
       custom_highlights = function(colors)
         return {
           TabLineSel = {
-            fg = colors.flamigo,
+            fg = colors.flamingo,
           },
           TabLine = {
             fg = colors.pink,
@@ -37,6 +37,7 @@ return {
       end,
 
       integrations = {
+        bufferline = false,
         cmp = true,
         treesitter = true,
         snacks = {
