@@ -111,7 +111,7 @@ return {
               ["solidity"] = {
                 format_on_save = {
                   prettier = {
-                    command = "prettier",
+                    command = "prettierd",
                     args = { "--stdin-filepath", "%filepath%", "--parser", "solidity-parse" },
                     stdin = true,
                   },
