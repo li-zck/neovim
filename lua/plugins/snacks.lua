@@ -108,6 +108,9 @@ return {
             winhighlight = "NormalFloat:SnacksInputNormal,FloatBorder:SnacksInputBorder,FloatTitle:SnacksInputTitle",
             cursorline = false,
           },
+          b = {
+            completion = false,
+          },
         },
       },
 
@@ -172,12 +175,12 @@ return {
       -- PICKER --
       picker = {
         enabled = true,
-        border = "single",
-        hidden = false,
+        border = "rounded",
+        hidden = true,
         ignored = false,
         previewers = {
           file = {
-            max_line_height = 300,
+            max_line_height = 1000,
           },
         },
         layout = {
@@ -194,8 +197,14 @@ return {
             border = "none",
             {
               box = "vertical",
-              { win = "list", title = " Results ", title_pos = "center", border = "rounded" },
-              { win = "input", height = 1, border = "rounded", title = "{title} {live} {flags}", title_pos = "center" },
+              { win = "list", title = "Results", title_pos = "center", border = "rounded" },
+              {
+                win = "input",
+                height = 1,
+                border = "rounded",
+                title = "{title} {live} {flags}",
+                title_pos = "center",
+              },
             },
             {
               win = "preview",
@@ -216,7 +225,6 @@ return {
             auto_close = true,
             exclude = {
               ".git",
-              "node_modules",
             },
             layout = {
               layout = {
@@ -262,7 +270,8 @@ return {
 
       -- SCRATCH BUFFER --
       scratch = {
-        icon = nil,
+        enabled = true,
+        icon = false,
       },
 
       -- WIN --
@@ -300,6 +309,20 @@ return {
       "<leader>sg",
       "<cmd>lua Snacks.picker.grep()<CR>",
       desc = "Snacks Picker cwd grep",
+    },
+    {
+      "-",
+      function()
+        require("utils.snacks.scratch").new_scratch()
+      end,
+      desc = "Snacks: New Scratch (choose ft)",
+    },
+    {
+      "_",
+      function()
+        require("utils.snacks.scratch").select_scratch()
+      end,
+      desc = "Snacks: Select Scratch",
     },
   },
 }
