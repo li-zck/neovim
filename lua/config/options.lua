@@ -50,7 +50,7 @@ vim.opt.equalalways = false
 -- Add asterisks in block comments
 vim.opt.formatoptions:append({ "r" })
 
--- NOTE: MOLTEN
+-- NOTE: MOLTEN --
 vim.g.python3_host_prog = vim.fn.expand("/Users/lee/.virtualenvs/neovim/bin/python3")
 
 -- I find auto open annoying, keep in mind setting this option will require setting
