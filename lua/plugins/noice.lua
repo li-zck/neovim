@@ -1,16 +1,20 @@
 return {
   "folke/noice.nvim",
-  -- opts = function(_, opts)
-  --   opts.presets.lsp_doc_border = true
-  -- end,
-
+  event = "VeryLazy",
+  dependencies = {
+    "MunifTanjim/nui.nvim",
+  },
   opts = {
     cmdline = {
-      view = "cmdline",
+      enabled = true,
     },
 
     presets = {
-      command_palette = false,
+      bottom_search = false,
+      command_palette = true,
+      long_message_to_split = true,
+      inc_rename = true,
+      lsp_doc_border = true,
     },
 
     messsages = {
