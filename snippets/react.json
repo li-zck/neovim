@@ -1,0 +1,11 @@
+{
+  "Arrow function": {
+    "prefix": "afn",
+    "body": [
+      "const ${1:name} = ($2)${3|, : void, |} => {",
+      "  $4",
+      "}"
+    ],
+    "description": "Arrow function snippet"
+  }
+}
