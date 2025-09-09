@@ -15,10 +15,19 @@ return {
     completion = {
       documentation = {
         auto_show = true,
+        window = {
+          border = "rounded",
+          winhighlight = "Normal:BlinkCmpDoc,FloatBorder:BlinkCmpDocBorder,CursorLine:BlinkCmpDocCursorLine,Search:None",
+        },
+      },
+
+      menu = {
+        border = "rounded",
+        winhighlight = "Normal:BlinkCmpMenu,FloatBorder:BlinkCmpMenu,CursorLine:BlinkCmpMenuSelection,Search:None",
       },
 
       ghost_text = {
-        enabled = false,
+        enabled = true,
       },
     },
 
