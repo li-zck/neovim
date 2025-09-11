@@ -79,12 +79,12 @@ return {
             },
           },
 
-          pyright = {
-            filetypes = {
-              "python",
-              "markdown",
-            },
-          },
+          -- pyright = {
+          --   filetypes = {
+          --     "python",
+          --     "markdown",
+          --   },
+          -- },
 
           efm = {
             filetypes = {
