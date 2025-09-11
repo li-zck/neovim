@@ -5,6 +5,9 @@ require("config.options")
 vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
 vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" })
 
+-- disable spell checks globally
+vim.o.spell = false
+
 -- neovide settings
 if vim.g.neovide then
   -- layout
