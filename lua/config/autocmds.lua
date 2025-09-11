@@ -59,11 +59,18 @@ vim.api.nvim_create_autocmd("User", {
 })
 
 -- disable spell checking for txt and md filetype
--- vim.api.nvim_create_autocmd("FileType", {
---   pattern = { "markdown", "txt" },
---   callback = function()
---     vim.opt_local.spell = false
---   end,
--- })
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "markdown", "txt" },
+  callback = function()
+    vim.opt_local.spell = false
+  end,
+})
 
 -- vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "txt",
+  callback = function()
+    vim.opt_local.spell = false
+  end,
+})
