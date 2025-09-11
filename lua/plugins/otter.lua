@@ -38,10 +38,10 @@ return {
         postambles = {},
         -- A table of patterns to ignore for each language. The key is the language and the value is a lua match pattern to ignore.
         -- lua patterns: https://www.lua.org/pil/20.2.html
-        ignore_pattern = {
-          -- ipython cell magic (lines starting with %) and shell commands (lines starting with !)
-          python = "^(%s*[%%!].*)",
-        },
+        -- ignore_pattern = {
+        -- ipython cell magic (lines starting with %) and shell commands (lines starting with !)
+        -- python = "^(%s*[%%!].*)",
+        -- },
       },
       -- list of characters that should be stripped from the beginning and end of the code chunks
       strip_wrapping_quote_characters = { "'", '"', "`" },
