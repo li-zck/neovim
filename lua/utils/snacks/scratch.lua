@@ -125,7 +125,7 @@ function M.select_scratch()
           enter = true,
           focus = true,
         })
-        vim.cmd("startinsert")
+        -- vim.cmd("startinsert")
       end)
     end,
   })
