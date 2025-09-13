@@ -31,6 +31,7 @@ return {
       "norg",
       "hurl",
       "go",
+      "c_sharp",
     },
 
     textobjects = {
