@@ -121,7 +121,40 @@ return {
         },
 
         omnisharp = {
-          settings = {},
+
+          on_attach = function(client, bufnr)
+            -- tell Neovim this server has no inlay hints
+            client.server_capabilities.inlayHintProvider = false
+
+            -- make sure hints are off in this buffer
+            if vim.lsp.inlay_hint then
+              pcall(vim.lsp.inlay_hint.enable, false, { bufnr = bufnr })
+            end
+          end,
+
+          -- no-op the inlayHint handler just in case
+          handlers = {
+            ["textDocument/inlayHint"] = function() end,
+          },
+
+          settings = {
+            RoslynExtensionsOptions = {
+              InlayHintsOptions = {
+                EnableForParameters = false,
+                ForLiteralParameters = false,
+                ForIndexerParameters = false,
+                ForObjectCreationParameters = false,
+                ForOtherParameters = false,
+                SuppressForParametersThatDifferOnlyBySuffix = false,
+                SuppressForParametersThatMatchMethodIntent = false,
+                SuppressForParametersThatMatchArgumentName = false,
+                EnableForTypes = false,
+                ForImplicitVariableTypes = false,
+                ForLambdaParameterTypes = false,
+                ForImplicitObjectCreation = false,
+              },
+            },
+          },
         },
       },
     },
