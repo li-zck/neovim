@@ -5,9 +5,13 @@ return {
       "jose-elias-alvarez/typescript.nvim",
     },
     opts = {
-      inlay_hints = { enabled = true },
+      inlay_hints = {
+        enabled = true,
+      },
+
       servers = {
         cssls = {},
+
         tailwindcss = {
           root_dir = function(...)
             return require("lspconfig.util").root_pattern(".git")(...)
@@ -47,7 +51,6 @@ return {
               diagnostics = {
                 ignoredCodes = { 6133, 6192 },
                 disable = { "incomplete-signature-doc", "trailing-space" },
-                -- enable = false,
                 groupSeverity = {
                   strong = "Warning",
                   strict = "Warning",
@@ -79,13 +82,6 @@ return {
             },
           },
 
-          -- pyright = {
-          --   filetypes = {
-          --     "python",
-          --     "markdown",
-          --   },
-          -- },
-
           efm = {
             filetypes = {
               "solidity",
@@ -106,29 +102,26 @@ return {
                 "foundry.toml"
               )(fname)
             end,
+          },
+        },
 
-            settings = {
-              ["solidity"] = {
-                format_on_save = {
-                  prettier = {
-                    command = "prettierd",
-                    args = { "--stdin-filepath", "%filepath%", "--parser", "solidity-parse" },
-                    stdin = true,
-                  },
-                },
-
-                linters = {
-                  solhint = {
-                    command = "solhint",
-                    args = { "%filepath%" },
-                    root_dir = require("lspconfig.util").root_pattern("package.json", ".git", "solhintrc.json"),
-                    lint_stdin = true,
-                    lint_args = { "--stdin", "%filepath%" },
-                  },
-                },
+        vtsls = {
+          settings = {
+            typescript = {
+              inlayHints = {
+                parameterNames = { enabled = "all" },
+                parameterTypes = { enabled = true },
+                variableTypes = { enabled = true },
+                propertyDeclarationTypes = { enabled = true },
+                functionLikeReturnTypes = { enabled = true },
+                enumMemberValues = { enabled = true },
               },
             },
           },
+        },
+
+        omnisharp = {
+          settings = {},
         },
       },
     },
