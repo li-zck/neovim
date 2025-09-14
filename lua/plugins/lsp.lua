@@ -84,7 +84,6 @@ return {
 
           efm = {
             filetypes = {
-              "csharp",
               "solidity",
               "javascript",
               "typescript",
@@ -123,21 +122,21 @@ return {
 
         omnisharp = {
 
-          on_attach = function(client, bufnr)
-            -- tell Neovim this server has no inlay hints
-            client.server_capabilities.inlayHintProvider = false
-
-            -- make sure hints are off in this buffer
-            if vim.lsp.inlay_hint then
-              pcall(vim.lsp.inlay_hint.enable, false, { bufnr = bufnr })
-            end
-          end,
-
-          -- no-op the inlayHint handler just in case
-          handlers = {
-            ["textDocument/inlayHint"] = function() end,
-            ["textDocument/publishDiagnostics"] = function() end,
-          },
+          -- on_attach = function(client, bufnr)
+          --   -- tell Neovim this server has no inlay hints
+          --   client.server_capabilities.inlayHintProvider = false
+          --
+          --   -- make sure hints are off in this buffer
+          --   if vim.lsp.inlay_hint then
+          --     pcall(vim.lsp.inlay_hint.enable, false, { bufnr = bufnr })
+          --   end
+          -- end,
+          --
+          -- -- no-op the inlayHint handler just in case
+          -- handlers = {
+          --   ["textDocument/inlayHint"] = function() end,
+          --   ["textDocument/publishDiagnostics"] = function() end,
+          -- },
 
           settings = {
             RoslynExtensionsOptions = {
