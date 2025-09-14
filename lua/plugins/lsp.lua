@@ -84,6 +84,7 @@ return {
 
           efm = {
             filetypes = {
+              "csharp",
               "solidity",
               "javascript",
               "typescript",
@@ -135,23 +136,24 @@ return {
           -- no-op the inlayHint handler just in case
           handlers = {
             ["textDocument/inlayHint"] = function() end,
+            ["textDocument/publishDiagnostics"] = function() end,
           },
 
           settings = {
             RoslynExtensionsOptions = {
               InlayHintsOptions = {
-                EnableForParameters = false,
-                ForLiteralParameters = false,
-                ForIndexerParameters = false,
-                ForObjectCreationParameters = false,
-                ForOtherParameters = false,
+                EnableForParameters = true,
+                ForLiteralParameters = true,
+                ForIndexerParameters = true,
+                ForObjectCreationParameters = true,
+                ForOtherParameters = true,
                 SuppressForParametersThatDifferOnlyBySuffix = false,
                 SuppressForParametersThatMatchMethodIntent = false,
                 SuppressForParametersThatMatchArgumentName = false,
-                EnableForTypes = false,
-                ForImplicitVariableTypes = false,
-                ForLambdaParameterTypes = false,
-                ForImplicitObjectCreation = false,
+                EnableForTypes = true,
+                ForImplicitVariableTypes = true,
+                ForLambdaParameterTypes = true,
+                ForImplicitObjectCreation = true,
               },
             },
           },
