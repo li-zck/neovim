@@ -176,49 +176,63 @@ return {
       picker = {
         enabled = true,
         border = "rounded",
-        hidden = true,
-        ignored = false,
+
+        files = {
+          hidden = true,
+          ignored = false,
+        },
+
         previewers = {
           file = {
             max_line_height = 1000,
           },
         },
-        layout = {
-          reverse = true,
-          layout = {
-            -- box = function()
-            --   return vim.o.columns >= 120 and "horizontal" or "vertical"
-            -- end,
-            box = "vertical",
-            width = function()
-              return vim.o.columns >= 120 and 0.6 or 0.8
-            end,
-            height = 0.9,
-            border = "none",
-            {
-              box = "vertical",
-              { win = "list", title = "Results", title_pos = "center", border = "rounded" },
-              {
-                win = "input",
-                height = 1,
-                border = "rounded",
-                title = "{title} {live} {flags}",
-                title_pos = "center",
-              },
-            },
-            {
-              win = "preview",
-              title = "{preview:Preview}",
-              -- width = 0.6,
-              border = "rounded",
-              title_pos = "center",
-            },
-          },
 
-          -- preset = function()
-          --   return vim.o.columns >= 120 and "telescope" or "vertical"
-          -- end,
+        layout = {
+          cycle = true,
+          preset = function()
+            return vim.o.columns >= 120 and "default" or "vertical"
+          end,
         },
+
+        -- layout = {
+        --   reverse = true,
+        --   layout = {
+        --     -- box = function()
+        --     --   return vim.o.columns >= 120 and "horizontal" or "vertical"
+        --     -- end,
+        --     box = "vertical",
+        --     width = function()
+        --       return vim.o.columns >= 120 and 0.6 or 0.8
+        --     end,
+        --     height = 0.9,
+        --     border = "none",
+        --     {
+        --       box = "vertical",
+        --       {
+        --         win = "list",
+        --         title = "Results",
+        --         title_pos = "center",
+        --         border = "rounded",
+        --         -- height = 10,
+        --       },
+        --       {
+        --         win = "input",
+        --         height = 1,
+        --         border = "rounded",
+        --         title = "{title} {live} {flags}",
+        --         title_pos = "center",
+        --       },
+        --     },
+        --     {
+        --       win = "preview",
+        --       title = "{preview:Preview}",
+        --       -- width = 0.6,
+        --       border = "rounded",
+        --       title_pos = "center",
+        --     },
+        --   },
+        -- },
 
         sources = {
           explorer = {
@@ -234,6 +248,17 @@ return {
                 preview = false,
                 preset = "float",
               },
+            },
+          },
+        },
+
+        zoxide = {
+          finder = "files_zoxide",
+          format = "file",
+          confirm = "load_session",
+          win = {
+            preview = {
+              minimal = true,
             },
           },
         },
@@ -323,6 +348,11 @@ return {
         require("utils.snacks.scratch").select_scratch()
       end,
       desc = "Snacks: Select Scratch",
+    },
+    {
+      "<leader>zi",
+      "<cmd>lua Snacks.picker.zoxide()<CR>",
+      desc = "Snacks Picker zoxide",
     },
   },
 }
