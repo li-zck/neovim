@@ -23,10 +23,11 @@ require("lazy").setup({
     {
       "LazyVim/LazyVim",
       opts = {
-        colorscheme = "catppuccin",
-        -- ui = {
-        --   backdrop = true,
-        -- },
+        -- colorscheme = "catppuccin",
+        colorscheme = "tokyonight",
+        ui = {
+          backdrop = 50,
+        },
       },
     },
   },
@@ -39,8 +40,6 @@ require("lazy").setup({
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
-
-  -- install = { colorscheme = { "catppuccin" } },
 
   checker = {
     enabled = true, -- check for plugin updates periodically
