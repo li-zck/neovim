@@ -120,42 +120,44 @@ return {
           },
         },
 
-        omnisharp = {
-          -- on_attach = function(client, bufnr)
-          --   -- tell Neovim this server has no inlay hints
-          --   client.server_capabilities.inlayHintProvider = false
-          --
-          --   -- make sure hints are off in this buffer
-          --   if vim.lsp.inlay_hint then
-          --     pcall(vim.lsp.inlay_hint.enable, false, { bufnr = bufnr })
-          --   end
-          -- end,
-          --
-          -- -- no-op the inlayHint handler just in case
-          -- handlers = {
-          --   ["textDocument/inlayHint"] = function() end,
-          --   ["textDocument/publishDiagnostics"] = function() end,
-          -- },
+        -- omnisharp = {
+        --   on_attach = function(client, bufnr)
+        --     -- tell Neovim this server has no inlay hints
+        --     client.server_capabilities.inlayHintProvider = false
+        --
+        --     -- make sure hints are off in this buffer
+        --     if vim.lsp.inlay_hint then
+        --       pcall(vim.lsp.inlay_hint.enable, false, { bufnr = bufnr })
+        --     end
+        --   end,
+        --
+        --   -- no-op the inlayHint handler just in case
+        --   handlers = {
+        --     ["textDocument/inlayHint"] = function() end,
+        --     ["textDocument/publishDiagnostics"] = function() end,
+        --   },
+        --
+        --   settings = {
+        --     RoslynExtensionsOptions = {
+        --       InlayHintsOptions = {
+        --         EnableForParameters = true,
+        --         ForLiteralParameters = true,
+        --         ForIndexerParameters = true,
+        --         ForObjectCreationParameters = true,
+        --         ForOtherParameters = true,
+        --         SuppressForParametersThatDifferOnlyBySuffix = false,
+        --         SuppressForParametersThatMatchMethodIntent = false,
+        --         SuppressForParametersThatMatchArgumentName = false,
+        --         EnableForTypes = true,
+        --         ForImplicitVariableTypes = true,
+        --         ForLambdaParameterTypes = true,
+        --         ForImplicitObjectCreation = true,
+        --       },
+        --     },
+        --   },
+        -- },
 
-          settings = {
-            RoslynExtensionsOptions = {
-              InlayHintsOptions = {
-                EnableForParameters = true,
-                ForLiteralParameters = true,
-                ForIndexerParameters = true,
-                ForObjectCreationParameters = true,
-                ForOtherParameters = true,
-                SuppressForParametersThatDifferOnlyBySuffix = false,
-                SuppressForParametersThatMatchMethodIntent = false,
-                SuppressForParametersThatMatchArgumentName = false,
-                EnableForTypes = true,
-                ForImplicitVariableTypes = true,
-                ForLambdaParameterTypes = true,
-                ForImplicitObjectCreation = true,
-              },
-            },
-          },
-        },
+        csharp_ls = {},
 
         bashls = {},
 
@@ -202,6 +204,18 @@ return {
           },
         },
       },
+
+      -- require("mason-lspconfig").setup({
+      --   handlers = {
+      --     function(server_name)
+      --       local server = servers[server_name] or {}
+      --
+      --       server.capabilities = require("blink.cmp").get_lsp_capabilities(server.capabilities or {})
+      --
+      --       require("lspconfig")[server_name].setup(server)
+      --     end,
+      --   },
+      -- }),
     },
   },
 }
