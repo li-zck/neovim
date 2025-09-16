@@ -189,6 +189,10 @@ return {
         },
 
         layout = {
+          backdrop = {
+            dim = true,
+            percentage = 0.15,
+          },
           cycle = true,
           preset = function()
             return vim.o.columns >= 120 and "default" or "vertical"
@@ -236,11 +240,17 @@ return {
 
         sources = {
           explorer = {
+            tree = true,
+            git_status_open = false,
             auto_close = true,
+            hidden = true,
             exclude = {
               ".git",
             },
             layout = {
+              box = {
+                border = "rounded",
+              },
               layout = {
                 position = "float",
                 width = 60,
@@ -300,13 +310,13 @@ return {
       },
 
       -- WIN --
-      win = {
-        show = true,
-        wo = {
-          winhighlight = "Normal:Normal,NormalFloat:Normal,FloatBorder:Normal",
-        },
-        bo = {},
-      },
+      -- win = {
+      --   show = true,
+      --   wo = {
+      --     winhighlight = "Normal:Normal,NormalFloat:Normal,FloatBorder:Normal",
+      --   },
+      --   bo = {},
+      -- },
     }
   end,
 
