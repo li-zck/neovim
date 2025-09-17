@@ -4,12 +4,16 @@ return {
     dependencies = {
       "jose-elias-alvarez/typescript.nvim",
     },
+
+    lazy = false,
     opts = {
       inlay_hints = {
         enabled = true,
       },
 
       servers = {
+        ruby_lsp = {},
+
         cssls = {},
 
         tailwindcss = {
@@ -205,17 +209,82 @@ return {
         },
       },
 
+      config = function()
+        local capabilities = require("blink.cmp").get_lsp_capabilities() or {}
+
+        local lspconfig = require("lspconfig")
+
+        lspconfig.ruby_lsp.setup({
+          capabilities = capabilities,
+        })
+      end,
+
       -- require("mason-lspconfig").setup({
-      --   handlers = {
-      --     function(server_name)
-      --       local server = servers[server_name] or {}
+      -- handlers = {
+      --   function(server_name)
+      --     local server = servers[server_name] or {}
       --
-      --       server.capabilities = require("blink.cmp").get_lsp_capabilities(server.capabilities or {})
+      --     server.capabilities = require("blink.cmp").get_lsp_capabilities(server.capabilities or {})
       --
-      --       require("lspconfig")[server_name].setup(server)
-      --     end,
-      --   },
+      --     require("lspconfig")[server_name].setup(server)
+      -- end,
+      -- },
       -- }),
     },
+
+    -- config = function()
+    --   local capabilities = require("blink.cmp").get_lsp_capabilities()
+    --
+    --   local lspconfig = require("lspconfig")
+    --
+    --   lspconfig.ruby_lsp.setup({
+    --     capabilities = capabilities,
+    --   })
+    -- end,
+
+    -- config = function(_, opts)
+    --   -- Capabilities (Blink → cmp → stock)
+    --   local capabilities
+    --   local ok_blink, blink = pcall(require, "blink.cmp")
+    --   if ok_blink and blink.get_lsp_capabilities then
+    --     capabilities = blink.get_lsp_capabilities()
+    --   else
+    --     local ok_cmp, cmp_lsp = pcall(require, "cmp_nvim_lsp")
+    --     if ok_cmp and cmp_lsp.default_capabilities then
+    --       capabilities = cmp_lsp.default_capabilities()
+    --     else
+    --       capabilities = vim.lsp.protocol.make_client_capabilities()
+    --     end
+    --   end
+    --
+    --   -- Mason bootstrap
+    --   local mason = require("mason")
+    --   local mason_lspconfig = require("mason-lspconfig")
+    --   mason.setup()
+    --   mason_lspconfig.setup({
+    --     ensure_installed = {
+    --       "cssls",
+    --       "tailwindcss",
+    --       "lua_ls",
+    --       "vtsls",
+    --       "csharp_ls",
+    --       "bashls",
+    --       "dockerls",
+    --       "gopls",
+    --       -- "efm", -- only if you actually use it
+    --     },
+    --   })
+    --
+    --   -- lspconfig setup
+    --   local lspconfig = require("lspconfig")
+    --   for name, server_opts in pairs(opts.servers or {}) do
+    --     server_opts = server_opts or {}
+    --     server_opts.capabilities = vim.tbl_deep_extend("force", capabilities, server_opts.capabilities or {})
+    --     lspconfig[name].setup(server_opts)
+    --   end
+    --
+    --   -- Example extra server
+    --   lspconfig.ruby_lsp.setup({ capabilities = capabilities })
+    -- end,
   },
 }
