@@ -20,35 +20,31 @@ return {
         lsp_format = "fallback",
       },
       javascript = {
-        "prettierd",
-        stop_after_first = true,
+        "biome",
       },
       typescript = {
-        "prettierd",
-        stop_after_first = true,
+        "biome",
       },
       typescriptreact = {
-        "prettierd",
-        stop_after_first = true,
+        "biome",
       },
       javascriptreact = {
-        "prettierd",
-        stop_after_first = true,
+        "biome",
       },
 
-      ["*"] = { "codespell" }, -- run formatters on all filetypes
-      ["_"] = { "trim_whitespace" }, -- run formatters on filetypes tha don't have other formatters configured.
+      -- ["*"] = { "codespell" }, -- run formatters on all filetypes
+      -- ["_"] = { "trim_whitespace" }, -- run formatters on filetypes tha don't have other formatters configured.
     },
-    default_format_opts = {
-      lsp_format = "fallback",
-    },
+    -- default_format_opts = {
+    --   lsp_format = "fallback",
+    -- },
     format_on_save = {
       lsp_format = "fallback",
       timeout_ms = 500,
     },
-    format_after_save = {
-      lsp_format = "fallback",
-    },
+    -- format_after_save = {
+    --   lsp_format = "fallback",
+    -- },
     log_level = vim.log.levels.ERROR,
     notify_on_error = true,
     notify_no_formatters = true,
