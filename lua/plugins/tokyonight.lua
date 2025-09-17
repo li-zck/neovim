@@ -19,12 +19,18 @@ return {
     dim_inactive = false,
     lualine_bold = true,
 
-    -- on_highlights = function(hl, c)
-    --   -- optional: sample tweaks similar to your Catppuccin overrides
-    --   hl.TabLineSel = { fg = c.magenta }
-    --   hl.TabLine = { fg = c.purple }
-    --   hl.CmpBorder = { fg = c.purple, bg = "NONE" }
-    --   hl.Pmenu = { bg = "NONE" }
+    -- on_colors = function(colors)
+    --   colors.hint = colors.orange
+    --   colors.unused = "#ffffff"
     -- end,
+
+    on_highlights = function(hl, c)
+      -- optional: sample tweaks similar to your Catppuccin overrides
+      hl.DiagnosticUnnecessary = { fg = "#808493" }
+      hl.TabLineSel = { fg = c.magenta }
+      hl.TabLine = { fg = c.purple }
+      hl.CmpBorder = { fg = c.purple, bg = "NONE" }
+      hl.Pmenu = { bg = "NONE" }
+    end,
   },
 }
