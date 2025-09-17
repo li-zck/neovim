@@ -31,6 +31,10 @@ return {
       javascriptreact = {
         "biome",
       },
+      ruby = {
+        -- "rubocop",
+        "rubyfmt",
+      },
 
       -- ["*"] = { "codespell" }, -- run formatters on all filetypes
       -- ["_"] = { "trim_whitespace" }, -- run formatters on filetypes tha don't have other formatters configured.
