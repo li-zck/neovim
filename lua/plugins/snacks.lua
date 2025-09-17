@@ -83,7 +83,7 @@ return {
 
       -- WORDS --
       words = {
-        enabled = true,
+        enabled = false,
       },
 
       -- STYLE --
