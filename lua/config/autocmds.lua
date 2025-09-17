@@ -66,6 +66,14 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+-- disable formatting for markdown files
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    vim.b.autoformat = false
+  end,
+})
+
 -- vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 
 vim.api.nvim_create_autocmd("FileType", {
