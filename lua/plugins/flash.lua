@@ -8,6 +8,28 @@ return {
       },
       char = {
         jump_labels = true,
+        highlight = {
+          backdrop = false,
+        },
+      },
+
+      treesitter = {
+        highlight = {
+          backdrop = true,
+          matches = false,
+        },
+      },
+    },
+
+    highlight = {
+      backdrop = true,
+      matches = false, -- disable highlight for search matches
+      priority = 5000,
+      groups = {
+        match = "FlashMatch",
+        current = "FlashCurrent",
+        backdrop = "FlashBackdrop",
+        label = "Constant",
       },
     },
   },
