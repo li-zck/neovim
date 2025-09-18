@@ -6,10 +6,10 @@ return {
   cmd = "Neorg",
   priority = 30,
   config = function()
-    require("neorg").setup({
-      load = {
-        ["core.defaults"] = {},
-      },
-    })
+    -- require("neorg").setup({
+    --   load = {
+    --     ["core.defaults"] = {},
+    --   },
+    -- })
   end,
 }
