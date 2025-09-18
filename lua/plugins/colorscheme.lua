@@ -1,75 +1,75 @@
 return {
   -- CATPPUCCIN --
-  {
-    "catppuccin",
-    name = "catppuccin",
-    priority = 1000,
-    lazy = false,
-    opts = {
-      flavour = "mocha",
-      background = {
-        light = "latte",
-        dark = "mocha",
-      },
-      term_colors = false,
-      transparent_background = true,
-      float = {
-        transparent = true,
-        solid = true,
-        -- single = true,
-      },
-      custom_highlights = function(colors)
-        return {
-          TabLineSel = {
-            fg = colors.flamingo,
-          },
-          TabLine = {
-            fg = colors.pink,
-          },
-          CmpBorder = {
-            fg = colors.pink,
-            bg = colors.pink,
-          },
-          Pmenu = {
-            bg = colors.none,
-          },
-        }
-      end,
-
-      integrations = {
-        bufferline = false,
-        cmp = true,
-        treesitter = true,
-        snacks = {
-          enabled = true,
-        },
-        blink_cmp = {
-          style = "bordered",
-        },
-      },
-      -- styles = {
-      --   comments = {},
-      --   conditionals = {},
-      --   loops = {},
-      --   functions = {},
-      --   keywords = {},
-      --   strings = {},
-      --   variables = {},
-      --   numbers = {},
-      --   booleans = {},
-      --   properties = {},
-      --   types = {},
-      -- },
-      -- color_overrides = {
-      --   mocha = {
-      --     base = "#000000",
-      --     mantle = "#000000",
-      --     crust = "#000000",
-      --   },
-      -- },
-      -- default_integrations = true,
-    },
-  },
+  -- {
+  --   "catppuccin",
+  --   name = "catppuccin",
+  --   priority = 1000,
+  --   lazy = false,
+  --   opts = {
+  --     flavour = "mocha",
+  --     background = {
+  --       light = "latte",
+  --       dark = "mocha",
+  --     },
+  --     term_colors = false,
+  --     transparent_background = true,
+  --     float = {
+  --       transparent = true,
+  --       solid = true,
+  --       -- single = true,
+  --     },
+  --     custom_highlights = function(colors)
+  --       return {
+  --         TabLineSel = {
+  --           fg = colors.flamingo,
+  --         },
+  --         TabLine = {
+  --           fg = colors.pink,
+  --         },
+  --         CmpBorder = {
+  --           fg = colors.pink,
+  --           bg = colors.pink,
+  --         },
+  --         Pmenu = {
+  --           bg = colors.none,
+  --         },
+  --       }
+  --     end,
+  --
+  --     integrations = {
+  --       bufferline = false,
+  --       cmp = true,
+  --       treesitter = true,
+  --       snacks = {
+  --         enabled = true,
+  --       },
+  --       blink_cmp = {
+  --         style = "bordered",
+  --       },
+  --     },
+  -- styles = {
+  --   comments = {},
+  --   conditionals = {},
+  --   loops = {},
+  --   functions = {},
+  --   keywords = {},
+  --   strings = {},
+  --   variables = {},
+  --   numbers = {},
+  --   booleans = {},
+  --   properties = {},
+  --   types = {},
+  -- },
+  -- color_overrides = {
+  --   mocha = {
+  --     base = "#000000",
+  --     mantle = "#000000",
+  --     crust = "#000000",
+  --   },
+  -- },
+  -- default_integrations = true,
+  --   },
+  -- },
 
   -- ROSE-PINE --
   -- {
