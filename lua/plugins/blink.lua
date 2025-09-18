@@ -14,6 +14,11 @@ return {
         "buffer",
       },
     },
+
+    cmdline = {
+      enabled = false,
+    },
+
     completion = {
       documentation = {
         auto_show = true,
@@ -30,18 +35,6 @@ return {
 
       ghost_text = {
         enabled = false,
-      },
-    },
-
-    cmdline = {
-      completion = {
-        ghost_text = {
-          enabled = true,
-        },
-      },
-
-      keymap = {
-        ["<Tab>"] = { "show", "accept" },
       },
     },
 
