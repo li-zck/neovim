@@ -32,6 +32,8 @@ return {
       "hurl",
       "go",
       "c_sharp",
+      "prisma",
+      "astro",
     },
 
     textobjects = {
