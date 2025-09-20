@@ -5,7 +5,10 @@ return {
     "rafamadriz/friendly-snippets",
   },
   opts = {
-    snippets = { preset = "luasnip" },
+    snippets = {
+      preset = "luasnip",
+    },
+
     sources = {
       default = {
         "lsp",
