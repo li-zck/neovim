@@ -30,8 +30,12 @@ return {
         border = "rounded",
       })
 
+      -- vim.bo[buf].bufhidden = "hide"
+      -- vim.bo[buf].buflisted = false
+
       -- create the floating window
       if vim.bo[buf].buftype ~= "terminal" then
+        -- state.job = vim.fn.jobstart(vim.o.shell, { term = true })
         vim.cmd("terminal")
       end
 
@@ -42,12 +46,12 @@ return {
       end
 
       vim.keymap.set("n", "q", hide_if_valid, { buffer = buf, nowait = true, silent = true })
-      vim.keymap.set("t", "q", function()
+      vim.keymap.set("n", "q", function()
         vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<C-\\><C-n>", true, false, true), "n", false)
         hide_if_valid()
       end, { buffer = buf, nowait = true, silent = true })
 
-      vim.bo[buf].bufhidden = "hide"
+      -- vim.bo[buf].bufhidden = "hide"
 
       return win_opts, buf
     end
@@ -56,15 +60,15 @@ return {
       if not (state.win and vim.api.nvim_win_is_valid(state.win)) then
         state.win, state.buf = create_floating_window({ buf = state.buf })
       else
-        vim.api.nvim_win_hide(state.win)
+        vim.api.nvim_win_close(state.win, true)
       end
     end
 
-    local close_terminal = function()
-      if state.win and vim.api.nvim_win_is_valid(state.win) then
-        vim.api.nvim_win_hide(state.win)
-      end
-    end
+    -- local close_terminal = function()
+    --   if state.win and vim.api.nvim_win_is_valid(state.win) then
+    --     vim.api.nvim_win_hide(state.win)
+    --   end
+    -- end
 
     vim.api.nvim_create_user_command("FloatTerminal", toggle_terminal, {})
     vim.keymap.set({ "n", "t" }, "<leader>tt", toggle_terminal, { desc = "Toggle Floating Terminal" })
