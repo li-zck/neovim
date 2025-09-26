@@ -17,6 +17,7 @@ return {
 
   opts = {
     options = {
+      persist_buffer_sort = false,
       show_buffer_close_icons = false,
       show_close_icon = false,
       separator_style = "slope",
@@ -24,6 +25,12 @@ return {
       offsets = {
         {
           separator = false,
+        },
+      },
+
+      groups = {
+        items = {
+          require("bufferline.groups").builtin.pinned:with({ icon = "🍣 " }),
         },
       },
     },
