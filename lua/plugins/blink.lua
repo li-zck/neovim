@@ -32,6 +32,7 @@ return {
       },
 
       menu = {
+        auto_show = true,
         border = "rounded",
         winhighlight = "Normal:BlinkCmpMenu,FloatBorder:BlinkCmpMenu,CursorLine:BlinkCmpMenuSelection,Search:None",
       },
