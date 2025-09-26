@@ -8,6 +8,15 @@ vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" })
 -- disable spell checks globally
 vim.o.spell = false
 
+-- disable bufferline persist_pinned_buffers method
+vim.schedule(function()
+  local ok, groups = pcall(require, "bufferline.groups")
+
+  if ok then
+    groups.persist_pinned_buffers = function() end
+  end
+end)
+
 -- neovide settings
 if vim.g.neovide then
   -- layout
