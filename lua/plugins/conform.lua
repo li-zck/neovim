@@ -20,16 +20,20 @@ return {
         lsp_format = "fallback",
       },
       javascript = {
-        "biome",
+        -- "biome",
+        "biome-check",
       },
       typescript = {
-        "biome",
+        -- "biome",
+        "biome-check",
       },
       typescriptreact = {
-        "biome",
+        -- "biome",
+        "biome-check",
       },
       javascriptreact = {
-        "biome",
+        -- "biome",
+        "biome-check",
       },
       ruby = {
         -- "rubocop",
