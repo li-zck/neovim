@@ -20,24 +20,23 @@ return {
         lsp_format = "fallback",
       },
       javascript = {
-        -- "biome",
         "biome-check",
       },
       typescript = {
-        -- "biome",
         "biome-check",
       },
       typescriptreact = {
-        -- "biome",
         "biome-check",
       },
       javascriptreact = {
-        -- "biome",
         "biome-check",
       },
       ruby = {
         -- "rubocop",
         "rubyfmt",
+      },
+      astro = {
+        "biome-check",
       },
 
       -- ["*"] = { "codespell" }, -- run formatters on all filetypes
