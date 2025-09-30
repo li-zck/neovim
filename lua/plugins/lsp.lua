@@ -12,6 +12,8 @@ return {
       },
 
       servers = {
+        mojo = {},
+
         ruby_lsp = {},
 
         cssls = {},

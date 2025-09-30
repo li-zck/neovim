@@ -4,6 +4,7 @@ return {
   dependencies = "OXY2DEV/markview.nvim",
   opts = {
     ensure_installed = {
+      "mojo",
       "bash",
       "html",
       "javascript",
