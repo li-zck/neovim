@@ -5,6 +5,7 @@ return {
       "csharpier",
       "netcoredbg",
       "astro-language-server",
+      "pug-lsp",
     },
   },
 }
