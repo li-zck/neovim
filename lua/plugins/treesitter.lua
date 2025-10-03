@@ -35,6 +35,7 @@ return {
       "c_sharp",
       "prisma",
       "astro",
+      "pug",
     },
 
     textobjects = {
