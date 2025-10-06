@@ -52,6 +52,8 @@ return {
 
       -- NOTIFIER --
       notifier = {
+        enabled = true,
+
         icons = {
           error = " ",
           warn = " ",
@@ -63,11 +65,15 @@ return {
 
       -- QUICK FILE --
       quickfile = {
+        enabled = true,
+
         exclude = { "latext" },
       },
 
       -- STATUS COLUMN --
       statuscolumn = {
+        enabled = true,
+
         left = { "mark", "sign" },
         right = { "fold", "git" },
         folds = {
@@ -88,6 +94,8 @@ return {
 
       -- STYLE --
       styles = {
+        enabled = true,
+
         snacks_image = {
           snacks_image = function()
             return {
@@ -117,6 +125,7 @@ return {
       -- IMAGE --
       image = {
         enabled = true,
+
         formats = {
           "png",
           "jpg",
@@ -139,6 +148,7 @@ return {
 
         doc = {
           enabled = true,
+
           inline = true,
           float = true,
           max_width = 30,
@@ -169,17 +179,19 @@ return {
       -- EXPLORER --
       explorer = {
         enabled = true,
+
         replace_netrw = true,
       },
 
       -- PICKER --
       picker = {
         enabled = true,
+
         border = "rounded",
 
         files = {
           hidden = true,
-          ignored = false,
+          ignored = true,
         },
 
         previewers = {
@@ -246,6 +258,7 @@ return {
             hidden = true,
             exclude = {
               ".git",
+              "node_modules",
             },
             layout = {
               box = {
@@ -306,6 +319,7 @@ return {
       -- SCRATCH BUFFER --
       scratch = {
         enabled = true,
+
         icon = false,
       },
 
@@ -317,6 +331,26 @@ return {
       --   },
       --   bo = {},
       -- },
+
+      -- RENAME --
+      rename = {
+        enabled = true,
+      },
+
+      -- TERMINAL --
+      terminal = {
+        enabled = true,
+      },
+
+      -- TOGGLE --
+      toggle = {
+        enabled = true,
+      },
+
+      -- PROFILER --
+      profiler = {
+        enabled = true,
+      },
     }
   end,
 
@@ -363,6 +397,20 @@ return {
       "<leader>zi",
       "<cmd>lua Snacks.picker.zoxide()<CR>",
       desc = "Snacks Picker zoxide",
+    },
+    {
+      "<c-/>",
+      function()
+        Snacks.terminal("float")
+      end,
+      desc = "Toggle Snacks terminal",
+    },
+    {
+      "<leader>ps",
+      function()
+        Snacks.profiler.scratch()
+      end,
+      desc = "Snacks Profiler scratch buffer",
     },
   },
 }
