@@ -4,13 +4,15 @@ return {
   dependencies = {
     "nvim-tree/nvim-web-devicons",
   },
-  config = function()
+  config = function(_, opts)
     local lualine = require("lualine")
     local nvimbattery = {
       function()
         return require("battery").get_status_line()
       end,
     }
+
+    table.insert(opts.sections.lualine_x, Snacks.profiler.status())
 
     lualine.setup({
       options = {
