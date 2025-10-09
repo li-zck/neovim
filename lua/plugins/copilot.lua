@@ -9,7 +9,7 @@ return {
   --     auto_trigger = true,
   --     keymap = {
   --       accept = "<Tab>",
-  --       accept_word = "<C-l>",
+  --       accept_word = "<C-j>",
   --       next = "<M-]>",
   --       prev = "<M-[>",
   --       dismiss = "<M-\\>",

@@ -339,7 +339,7 @@ return {
 
       -- TERMINAL --
       terminal = {
-        enabled = true,
+        enabled = false,
       },
 
       -- TOGGLE --
@@ -398,13 +398,13 @@ return {
       "<cmd>lua Snacks.picker.zoxide()<CR>",
       desc = "Snacks Picker zoxide",
     },
-    {
-      "<c-/>",
-      function()
-        Snacks.terminal("float")
-      end,
-      desc = "Toggle Snacks terminal",
-    },
+    -- {
+    --   "<c-/>",
+    --   function()
+    --     Snacks.terminal("float")
+    --   end,
+    --   desc = "Toggle Snacks terminal",
+    -- },
     {
       "<leader>ps",
       function()
