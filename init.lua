@@ -1,6 +1,14 @@
 require("config.lazy")
 require("config.options")
 
+-- disable spell checks for filetypes
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "txt",
+  callback = function()
+    vim.opt_local.spell = false
+  end,
+})
+
 -- floating window
 vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
 vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" })
