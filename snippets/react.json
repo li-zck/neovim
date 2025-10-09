@@ -7,5 +7,15 @@
       "}"
     ],
     "description": "Arrow function snippet"
+  },
+  "Try catch block": {
+    "prefix": "tc",
+    "body": [
+      "try {",
+      "  $1",
+      "} catch (${2:error}) {",
+      "  $3",
+      "}"
+    ]
   }
 }
