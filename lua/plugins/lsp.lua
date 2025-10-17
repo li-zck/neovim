@@ -219,6 +219,18 @@ return {
         lspconfig.ruby_lsp.setup({
           capabilities = capabilities,
         })
+
+        lspconfig.tailwindcss.setup({
+          settings = {
+            tailwindCSS = {
+              includeLanguages = {
+                "html",
+                "javascript-react",
+                "typescript-react",
+              },
+            },
+          },
+        })
       end,
 
       -- require("mason-lspconfig").setup({
