@@ -6,6 +6,8 @@ return {
     },
 
     lazy = false,
+    event = { "BufReadPre", "BufNewFile" },
+
     opts = {
       inlay_hints = {
         enabled = true,
@@ -91,8 +93,6 @@ return {
           efm = {
             filetypes = {
               "solidity",
-              "javascript",
-              "typescript",
               "json",
               "lua",
               "markdown",
@@ -112,18 +112,29 @@ return {
         },
 
         vtsls = {
-          settings = {
-            typescript = {
-              inlayHints = {
-                parameterNames = { enabled = "all" },
-                parameterTypes = { enabled = true },
-                variableTypes = { enabled = true },
-                propertyDeclarationTypes = { enabled = true },
-                functionLikeReturnTypes = { enabled = true },
-                enumMemberValues = { enabled = true },
-              },
-            },
-          },
+          -- settings = {
+          --   typescript = {
+          --     inlayHints = {
+          --       parameterNames = { enabled = "all" },
+          --       parameterTypes = { enabled = true },
+          --       variableTypes = { enabled = true },
+          --       propertyDeclarationTypes = { enabled = true },
+          --       functionLikeReturnTypes = { enabled = true },
+          --       enumMemberValues = { enabled = true },
+          --     },
+          --   },
+          --
+          --   typescriptreact = {
+          --     inlayHints = {
+          --       parameterNames = { enabled = "all" },
+          --       parameterTypes = { enabled = true },
+          --       variableTypes = { enabled = true },
+          --       propertyDeclarationTypes = { enabled = true },
+          --       functionLikeReturnTypes = { enabled = true },
+          --       enumMemberValues = { enabled = true },
+          --     },
+          --   },
+          -- },
         },
 
         -- omnisharp = {
