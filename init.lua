@@ -1,6 +1,8 @@
 require("config.lazy")
 require("config.options")
 
+-- vim.cmd.colorscheme = "tokyonight"
+
 -- disable spell checks for filetypes
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "txt",

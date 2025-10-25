@@ -1,5 +1,8 @@
 return {
   "3rd/image.nvim",
+
+  ft = { "markdown", "norg" },
+
   opts = {
     backend = "kitty",
     max_width = 100,

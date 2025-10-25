@@ -1,7 +1,9 @@
 return {
   "folke/tokyonight.nvim",
+
   lazy = false,
   priority = 1000,
+
   opts = {
     style = "night",
     transparent = false,
@@ -25,12 +27,12 @@ return {
     -- end,
 
     on_highlights = function(hl, c)
-      -- optional: sample tweaks similar to your Catppuccin overrides
-      hl.DiagnosticUnnecessary = { fg = "#808493" }
-      hl.TabLineSel = { fg = c.magenta }
-      hl.TabLine = { fg = c.purple }
-      hl.CmpBorder = { fg = c.purple, bg = "NONE" }
-      hl.Pmenu = { bg = "NONE" }
+      -- optional: sample tweaks similar to your catppuccin overrides
+      hl.diagnosticunnecessary = { fg = "#5C5C5C" }
+      hl.tablinesel = { fg = c.magenta }
+      hl.tabline = { fg = c.purple }
+      hl.cmpborder = { fg = c.purple, bg = "none" }
+      hl.pmenu = { bg = "none" }
     end,
   },
 }

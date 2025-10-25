@@ -1,9 +1,13 @@
 return {
   "saghen/blink.cmp",
+
   dependencies = {
     "L3MON4D3/LuaSnip",
     "rafamadriz/friendly-snippets",
   },
+
+  event = "InsertEnter",
+
   opts = {
     snippets = {
       preset = "luasnip",

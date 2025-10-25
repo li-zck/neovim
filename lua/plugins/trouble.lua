@@ -1,10 +1,11 @@
 return {
   "folke/trouble.nvim",
 
-  opts = {},
   cmd = "Trouble",
+
   keys = {},
   optional = true,
+  opts = {},
   specs = {
     "folke/snacks.nvim",
     opts = function(_, opts)
