@@ -181,6 +181,8 @@ return {
         enabled = true,
 
         replace_netrw = true,
+        -- follow = true,
+        auto_focus = true,
       },
 
       -- PICKER --
@@ -255,10 +257,11 @@ return {
             tree = true,
             git_status_open = false,
             auto_close = true,
+            follow_file = true,
             hidden = true,
             exclude = {
               ".git",
-              "node_modules",
+              -- "node_modules",
             },
             layout = {
               box = {
@@ -362,13 +365,13 @@ return {
       end,
       desc = "Toggle Snacks LazyGit",
     },
-    {
-      "<leader>e",
-      function()
-        require("snacks.explorer").open()
-      end,
-      desc = "Toggle Snacks Explorer",
-    },
+    -- {
+    --   "<leader>e",
+    --   function()
+    --     require("snacks.explorer").open()
+    --   end,
+    --   desc = "Toggle Snacks Explorer",
+    -- },
     {
       "<leader><leader>",
       "<cmd>lua Snacks.picker.files()<CR>",
