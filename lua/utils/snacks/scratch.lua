@@ -14,6 +14,7 @@ local DEFAULT_FTS = {
   { text = "python" },
   { text = "rust" },
   { text = "zig" },
+  { text = "prisma" },
 }
 
 local colw = { 0, 0 }
