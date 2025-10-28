@@ -89,3 +89,17 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.diagnostic.enable(false)
   end,
 })
+
+--[[
+LSP SAGA
+--]]
+
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    local c = vim.lsp.get_client_by_id(args.data.client_id)
+
+    if c and c.server_capabilities.semanticTokensProvider then
+      c.server_capabilities.semanticTokensProvider = nil
+    end
+  end,
+})
