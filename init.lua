@@ -1,7 +1,11 @@
 require("config.lazy")
 require("config.options")
 
--- vim.cmd.colorscheme = "tokyonight"
+vim.opt.signcolumn = "yes"
+
+vim.diagnostic.config({
+  virtual_text = true,
+})
 
 -- disable spell checks for filetypes
 vim.api.nvim_create_autocmd("FileType", {
@@ -19,13 +23,13 @@ vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" })
 vim.o.spell = false
 
 -- disable bufferline persist_pinned_buffers method
-vim.schedule(function()
-  local ok, groups = pcall(require, "bufferline.groups")
-
-  if ok then
-    groups.persist_pinned_buffers = function() end
-  end
-end)
+-- vim.schedule(function()
+--   local ok, groups = pcall(require, "bufferline.groups")
+--
+--   if ok then
+--     groups.persist_pinned_buffers = function() end
+--   end
+-- end)
 
 -- neovide settings
 if vim.g.neovide then
