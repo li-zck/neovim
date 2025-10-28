@@ -3,17 +3,17 @@ return {
   version = "*",
   dependencies = {
     "nvim-tree/nvim-web-devicons",
-    "catppuccin",
+    -- "catppuccin",
   },
 
-  event = "BufReadPre",
+  -- event = "BufReadPre",
 
-  init = function()
-    local ok, bufline = pcall(require, "catppuccin.groups.integrations.bufferline")
-    if ok and bufline.get_theme and not bufline.get then
-      bufline.get = bufline.get_theme
-    end
-  end,
+  -- init = function()
+  --   local ok, bufline = pcall(require, "catppuccin.groups.integrations.bufferline")
+  --   if ok and bufline.get_theme and not bufline.get then
+  --     bufline.get = bufline.get_theme
+  --   end
+  -- end,
 
   opts = {
     options = {
@@ -28,11 +28,11 @@ return {
         },
       },
 
-      groups = {
-        items = {
-          require("bufferline.groups").builtin.pinned:with({ icon = "🍣 " }),
-        },
-      },
+      -- groups = {
+      --   items = {
+      --     require("bufferline.groups").builtin.pinned:with({ icon = "🍣 " }),
+      --   },
+      -- },
     },
   },
 
