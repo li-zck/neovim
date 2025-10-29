@@ -1,3 +1,5 @@
+local util = require("lspconfig.util")
+
 return {
   {
     "neovim/nvim-lspconfig",
@@ -111,7 +113,9 @@ return {
           },
         },
 
-        vtsls = {
+        ts_ls = {
+          root_markers = util.root_pattern("package.json"),
+          single_file_support = false,
           -- settings = {
           --   typescript = {
           --     inlayHints = {
@@ -135,6 +139,43 @@ return {
           --     },
           --   },
           -- },
+        },
+
+        astro = {},
+
+        denols = {
+          root_markers = util.root_pattern("deno.json", "deno.jsonc"),
+          init_options = {
+            lint = true,
+            unstable = true,
+          },
+
+          cmd = {
+            "deno",
+            "lsp",
+          },
+
+          filetypes = {
+            "javascript",
+            "javascriptreact",
+            "javascript.jsx",
+            "typescript",
+            "typescriptreact",
+            "typescript.tsx",
+          },
+
+          {
+            deno = {
+              enable = true,
+              suggest = {
+                imports = {
+                  hosts = {
+                    ["https://deno.land"] = true,
+                  },
+                },
+              },
+            },
+          },
         },
 
         -- omnisharp = {
