@@ -2,12 +2,8 @@ return {
   "stevearc/conform.nvim",
   require("conform").setup({
     formatters_by_ft = {
-      lua = {
-        "stylua",
-      },
-      go = {
-        "gofmt",
-      },
+      lua = { "stylua" },
+      go = { "gofmt" },
       python = function(bufnr)
         if require("conform").get_formatter_info("ruff_format", bufnr).available then
           return { "ruff_format" }
@@ -40,8 +36,10 @@ return {
         "rubyfmt",
       },
       astro = {
-        "biome",
-        "biome-check",
+        -- "astro",
+        -- "prettier",
+        -- "biome",
+        -- "biome-check",
       },
 
       -- ["*"] = { "codespell" }, -- run formatters on all filetypes
