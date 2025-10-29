@@ -23,31 +23,31 @@ return {
     --   end
     -- end
 
-    local function breadcrumbs()
-      if vim.bo.buftype ~= "" then
-        return "huh?"
-      end
+    -- local function breadcrumbs()
+    --   if vim.bo.buftype ~= "" then
+    --     return "huh?"
+    --   end
+    --
+    --   local bar = nil
+    --   local ok, saga = pcall(require, "lspsaga.symbol.winbar")
+    --   if ok then
+    --     bar = saga.get_bar()
+    --   end
+    --   if bar and bar ~= "" then
+    --     return bar
+    --   end
 
-      local bar = nil
-      local ok, saga = pcall(require, "lspsaga.symbol.winbar")
-      if ok then
-        bar = saga.get_bar()
-      end
-      if bar and bar ~= "" then
-        return bar
-      end
+    -- Fallback: filename + devicon (so winbar isn't empty)
+    -- local fname = " "
+    -- if fname == "" then
+    --   return " "
+    -- end
 
-      -- Fallback: filename + devicon (so winbar isn't empty)
-      -- local fname = " "
-      -- if fname == "" then
-      --   return " "
-      -- end
+    -- local icon = ""
 
-      -- local icon = ""
-
-      -- return string.format(" › ", icon, fname)
-      return "huh?"
-    end
+    -- return string.format(" › ", icon, fname)
+    -- return "huh?"
+    -- end
 
     table.insert(opts.sections.lualine_x, Snacks.profiler.status())
 
@@ -130,7 +130,7 @@ return {
       -- },
 
       winbar = {
-        lualine_a = { breadcrumbs },
+        lualine_a = {},
         lualine_b = {},
         lualine_c = {},
         lualine_x = {},
@@ -139,7 +139,7 @@ return {
       },
 
       inactive_winbar = {
-        lualine_a = { breadcrumbs },
+        lualine_a = {},
         lualine_b = {},
         lualine_c = {},
         lualine_x = {},
