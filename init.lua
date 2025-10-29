@@ -1,6 +1,13 @@
 require("config.lazy")
 require("config.options")
 
+-- denols
+vim.g.markdown_fenced_languages = {
+  "ts=typescript",
+}
+
+vim.lsp.enable("denols")
+
 vim.opt.signcolumn = "yes"
 
 vim.diagnostic.config({
