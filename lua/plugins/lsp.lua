@@ -12,7 +12,7 @@ return {
 
     opts = {
       inlay_hints = {
-        enabled = true,
+        enabled = false,
       },
 
       servers = {
@@ -113,9 +113,41 @@ return {
           },
         },
 
+        -- denols = {
+        --   root_dir = function()
+        --     local root = util.root_pattern("deno.json", "deno.jsonc", "deno.lock")()
+        --
+        --     print("denols root_dir:", root)
+        --
+        --     return root
+        --   end,
+        --   init_options = {
+        --     lint = true,
+        --     unstable = true,
+        --     suggest = {
+        --       imports = {
+        --         hosts = {
+        --           ["https://deno.land"] = true,
+        --           ["https://cdn.nest.land"] = true,
+        --           ["https://crux.land"] = true,
+        --         },
+        --       },
+        --     },
+        --   },
+        -- },
+
         ts_ls = {
-          root_markers = util.root_pattern("package.json"),
+          root_dir = function(filename, bufnr)
+            local denoRootDir = util.root_pattern("deno.json", "deno.json")(filename)
+
+            if denoRootDir then
+              return nil
+            end
+
+            return util.root_pattern("package.json")(filename)
+          end,
           single_file_support = false,
+
           -- settings = {
           --   typescript = {
           --     inlayHints = {
@@ -142,41 +174,6 @@ return {
         },
 
         astro = {},
-
-        denols = {
-          root_markers = util.root_pattern("deno.json", "deno.jsonc"),
-          init_options = {
-            lint = true,
-            unstable = true,
-          },
-
-          cmd = {
-            "deno",
-            "lsp",
-          },
-
-          filetypes = {
-            "javascript",
-            "javascriptreact",
-            "javascript.jsx",
-            "typescript",
-            "typescriptreact",
-            "typescript.tsx",
-          },
-
-          {
-            deno = {
-              enable = true,
-              suggest = {
-                imports = {
-                  hosts = {
-                    ["https://deno.land"] = true,
-                  },
-                },
-              },
-            },
-          },
-        },
 
         -- omnisharp = {
         --   on_attach = function(client, bufnr)
